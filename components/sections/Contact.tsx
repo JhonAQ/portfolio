@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
                   <div className="relative z-0 w-full group">
                     <textarea
                       id="message"
-                      rows="4"
+                      rows={4}
                       required
                       value={messageText}
                       onChange={(e) => setMessageText(e.target.value)}
