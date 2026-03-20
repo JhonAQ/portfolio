@@ -33,10 +33,14 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-              ¡Hola! Soy Jhonatan, un desarrollador apasionado con sede en
-              Arequipa, Perú. Mi interés por la programación comenzó formalmente
-              en 2023, aunque mi curiosidad técnica me llevó a hacer mis
-              primeros commits allá por el 2017.
+
+              Soy Jhonatan, un desarrollador de software y estudiante de Ingeniería de Sistemas en la {" "}
+              <strong
+                className={`transition-colors ${isDarkMode ? "text-indigo-300 hover:text-indigo-200" : "text-indigo-600 hover:text-indigo-500"}`}
+              >
+                Universidad Nacional de San Agustín (UNSA)
+              </strong>
+              , radicado en Arequipa. Me especializo en transformar ideas complejas en experiencias digitales intuitivas, rápidas y escalables. 
             </p>
             <p
               className={
@@ -45,15 +49,7 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-              Actualmente estoy vinculado a la{" "}
-              <strong
-                className={`transition-colors ${isDarkMode ? "text-indigo-300 hover:text-indigo-200" : "text-indigo-600 hover:text-indigo-500"}`}
-              >
-                Universidad Nacional de San Agustín (UNSA)
-              </strong>
-              , donde he fortalecido mis bases en ciencias de la computación. Me
-              encanta participar en iniciativas colaborativas y desarrollar
-              herramientas que aporten valor real.
+              Mi enfoque técnico se complementa con un profundo interés en el diseño UI/UX, asegurando que cada aplicación no solo tenga un código impecable, sino que se sienta increíble al usarla.
             </p>
           </div>
 
