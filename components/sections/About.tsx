@@ -14,18 +14,18 @@ const About: React.FC = () => {
       className={`py-24 border-t transition-colors duration-500 ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 reveal">
-          <h2
-            className={`text-4xl md:text-5xl font-bold text-center md:text-left transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
-          >
-            Sobre Mí<span className="text-indigo-500">.</span>
-          </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-5 gap-16 items-start">
+        <div className="grid md:grid-cols-5 gap-12 lg:gap-16 items-start">
           <div
-            className={`lg:col-span-2 space-y-6 text-lg leading-relaxed reveal delay-100 transition-colors duration-300 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+            className={`md:col-span-2 space-y-6 text-lg leading-relaxed reveal delay-100 transition-colors duration-300 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
           >
+            <div className="mb-8 reveal">
+              <h2
+                className={`text-4xl md:text-5xl font-bold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+              >
+                Sobre Mí<span className="text-indigo-500">.</span>
+              </h2>
+            </div>
+
             <p
               className={
                 isDarkMode
@@ -53,12 +53,14 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-3 reveal delay-200">
+          <div
+            className={`md:col-span-3 reveal delay-200 pl-0 md:pl-8 lg:pl-0`}
+          >
             <h3
-              className={`text-2xl font-semibold mb-8 flex items-center gap-3 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+              className={`text-2xl font-bold mb-8 flex items-center md:items-start md:pt-4 gap-3 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
-              <Terminal className="text-indigo-500" size={24} /> Mi Arsenal
-              Tecnológico
+              <Terminal className="text-indigo-500 mt-1 md:mt-0" size={28} />
+              <span className="flex-1">Mi Arsenal Tecnológico</span>
             </h3>
 
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10">
