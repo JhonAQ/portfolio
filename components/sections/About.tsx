@@ -67,12 +67,12 @@ const About: React.FC = () => {
               <span className="flex-1">Mi Arsenal Tecnológico</span>
             </h3>
 
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8">
               {Object.entries(groupedSkills).map(
                 ([category, skillsGroup], idx) => (
-                  <div key={idx}>
+                  <div key={idx} className={idx === 0 ? "sm:col-span-2" : ""}>
                     <h4
-                      className={`text-xs font-bold uppercase tracking-widest mb-4 transition-colors ${isDarkMode ? "text-indigo-400/80" : "text-indigo-600/80"}`}
+                      className={`text-xs font-bold uppercase tracking-widest mb-3 transition-colors ${isDarkMode ? "text-indigo-400/80" : "text-indigo-600/80"}`}
                     >
                       {category}
                     </h4>
