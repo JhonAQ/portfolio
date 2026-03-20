@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <div className="flex items-center gap-3 pl-6 border-l border-slate-700/30">
             <button
               onClick={toggleTheme}
-              className={`p-2.5 rounded-full transition-all duration-300 ${isDarkMode ? "bg-white/5 text-yellow-400 hover:bg-white/10" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+              className={`p-2.5 rounded-full transition-all duration-300 ${isDarkMode ? "bg-white/5 text-slate-200 hover:bg-white/10" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
               aria-label="Alternar tema"
             >
               {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}

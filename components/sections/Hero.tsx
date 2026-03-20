@@ -35,12 +35,12 @@ const Hero: React.FC = () => {
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-16 md:gap-8">
         <div className="max-w-2xl flex-1 animate-fade-in-up">
           <h1
-            className={`text-5xl md:text-7xl font-extrabold tracking-tight mb-2 transition-all duration-300 ${isDarkMode ? "text-white hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" : "text-slate-900"}`}
+            className={`text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-2 transition-all duration-300 whitespace-nowrap ${isDarkMode ? "text-white hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" : "text-slate-900"}`}
           >
             Hola, soy Jhonatan<span className="text-indigo-500">.</span>
           </h1>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-indigo-500 md:text-indigo-400 mb-6 h-[40px] md:h-[60px] flex items-center">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-indigo-500 md:text-indigo-400 mb-6 h-[40px] md:h-[60px] flex items-center whitespace-nowrap overflow-hidden">
             <span>Soy {currentText}</span>
             <span
               className={`w-[3px] h-[30px] md:h-[45px] bg-indigo-500 ml-1 cursor-blink ${isDarkMode ? "shadow-[0_0_8px_rgba(99,102,241,0.8)]" : ""}`}
