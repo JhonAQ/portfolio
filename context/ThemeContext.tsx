@@ -11,13 +11,12 @@ export const useTheme = () => {
     setMounted(true);
   }, []);
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const isDarkMode = mounted ? currentTheme === 'dark' : true; 
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const isDarkMode = mounted ? currentTheme === "dark" : true;
 
   const toggleTheme = () => {
-    setTheme(isDarkMode ? 'light' : 'dark');
+    setTheme(isDarkMode ? "light" : "dark");
   };
 
   return { isDarkMode, toggleTheme, theme, setTheme };
 };
-
