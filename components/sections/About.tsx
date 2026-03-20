@@ -33,14 +33,16 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-
-              Soy Jhonatan, un desarrollador de software y estudiante de Ingeniería de Sistemas en la {" "}
+              Soy Jhonatan, un desarrollador de software y estudiante de
+              Ingeniería de Sistemas en la{" "}
               <strong
                 className={`transition-colors ${isDarkMode ? "text-indigo-300 hover:text-indigo-200" : "text-indigo-600 hover:text-indigo-500"}`}
               >
                 Universidad Nacional de San Agustín (UNSA)
               </strong>
-              , radicado en Arequipa. Me especializo en transformar ideas complejas en experiencias digitales intuitivas, rápidas y escalables. 
+              , radicado en Arequipa. Me especializo en transformar ideas
+              complejas en experiencias digitales intuitivas, rápidas y
+              escalables.
             </p>
             <p
               className={
@@ -49,7 +51,9 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-              Mi enfoque técnico se complementa con un profundo interés en el diseño UI/UX, asegurando que cada aplicación no solo tenga un código impecable, sino que se sienta increíble al usarla.
+              Mi enfoque técnico se complementa con un profundo interés en el
+              diseño UI/UX, asegurando que cada aplicación no solo tenga un
+              código impecable, sino que se sienta increíble al usarla.
             </p>
           </div>
 
