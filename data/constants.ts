@@ -7,7 +7,7 @@ export const roles = [
 export const navSections = [
   { id: 'home', label: 'Inicio' },
   { id: 'about', label: 'Sobre mí' },
-  { id: 'education', label: 'Educación' },
+  { id: 'education', label: 'Trayectoria' },
   { id: 'projects', label: 'Proyectos' },
   { id: 'contact', label: 'Contacto' }
 ];

@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, MapPin, Github, Send, CheckCircle } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  CheckCircle,
+  ArrowUpRight,
+} from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 const Contact: React.FC = () => {
@@ -34,200 +42,273 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className={`py-32 border-t relative overflow-hidden reveal transition-colors duration-500 ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+      className={`pt-20 pb-16 border-t relative overflow-hidden reveal transition-colors duration-500 ${
+        isDarkMode ? "border-white/5" : "border-slate-200"
+      }`}
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-600/10 rounded-full blur-[120px] z-[-1] pointer-events-none animate-blob"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           <div>
-            <h4 className="text-indigo-500 md:text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3">
+            <h4 className="text-indigo-500 md:text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3 reveal">
               ¿Qué sigue?
             </h4>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-6 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+              className={`text-4xl md:text-5xl font-bold mb-6 transition-colors reveal delay-100 ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
               Trabajemos <span className="text-indigo-500">Juntos.</span>
             </h2>
             <p
-              className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+              className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors reveal delay-200 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
             >
               Actualmente estoy abierto a nuevas oportunidades de trabajo y
               proyectos freelance. Ya sea que tengas una pregunta o simplemente
               quieras saludar, haré todo lo posible para responderte pronto.
             </p>
 
-            <div className="space-y-4 mb-10">
+            <div className="flex flex-col gap-6 mb-10">
               <a
                 href="mailto:jariasq@unsa.edu.pe"
-                className={`flex items-center gap-4 p-4 rounded-xl backdrop-blur-sm border transition-all group ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.02]" : "bg-white border-slate-200 hover:border-indigo-300 hover:bg-slate-50 shadow-sm"}`}
+                className={`group flex items-center justify-between p-8 rounded-3xl border transition-all duration-500 overflow-hidden relative reveal delay-300 ${
+                  isDarkMode
+                    ? "bg-[#111827] border-white/10 hover:border-indigo-500/50"
+                    : "bg-white border-slate-200 hover:border-indigo-500/50 hover:shadow-xl"
+                }`}
               >
                 <div
-                  className={`p-3 rounded-lg transition-all ${isDarkMode ? "bg-indigo-500/10 text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white" : "bg-indigo-100 text-indigo-600 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white"}`}
-                >
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <h5
-                    className={`text-sm font-semibold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-indigo-500/10 to-transparent`}
+                />
+
+                <div className="relative z-10">
+                  <span
+                    className={`block text-xs font-bold tracking-widest uppercase mb-2 ${isDarkMode ? "text-indigo-400" : "text-indigo-600"}`}
                   >
-                    Correo Electrónico
-                  </h5>
-                  <p
-                    className={`text-sm transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                    Contáctame
+                  </span>
+                  <h3
+                    className={`text-2xl md:text-3xl font-bold break-all ${isDarkMode ? "text-white" : "text-slate-900"}`}
                   >
                     jariasq@unsa.edu.pe
-                  </p>
+                  </h3>
+                </div>
+
+                <div
+                  className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:rotate-45 ${
+                    isDarkMode
+                      ? "border-white/20 bg-white/5 group-hover:bg-indigo-500 group-hover:border-indigo-500 text-white"
+                      : "border-slate-200 bg-slate-50 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-900"
+                  }`}
+                >
+                  <ArrowUpRight size={20} />
                 </div>
               </a>
 
-              <div
-                className={`flex items-center gap-4 p-4 rounded-xl backdrop-blur-sm border transition-all ${isDarkMode ? "bg-[#111827]/60 border-white/5" : "bg-white border-slate-200 shadow-sm"}`}
-              >
-                <div
-                  className={`p-3 rounded-lg ${isDarkMode ? "bg-indigo-500/10 text-indigo-400" : "bg-indigo-100 text-indigo-600"}`}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 reveal delay-400">
+                <a
+                  href="https://github.com/JhonAQ"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`group p-6 rounded-3xl border transition-all duration-300 relative overflow-hidden h-48 flex flex-col justify-between ${
+                    isDarkMode
+                      ? "bg-[#111827] border-white/10 hover:border-white/30 hover:bg-white/5"
+                      : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-xl hover:bg-slate-50"
+                  }`}
                 >
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <h5
-                    className={`text-sm font-semibold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                  <div className="absolute right-[-20px] top-[-20px] opacity-[0.05] group-hover:opacity-[0.1] transition-all duration-500 scale-[2.5] rotate-12">
+                    <Github size={100} />
+                  </div>
+
+                  <div
+                    className={`relative z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-colors duration-300 ${
+                      isDarkMode
+                        ? "border-white/20 group-hover:bg-white group-hover:text-black group-hover:border-transparent"
+                        : "border-slate-200 group-hover:bg-black group-hover:text-white group-hover:border-transparent"
+                    }`}
                   >
-                    Ubicación
-                  </h5>
-                  <p
-                    className={`text-sm transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
-                  >
-                    Arequipa, Perú (Remoto global)
-                  </p>
-                </div>
+                    <Github size={24} />
+                  </div>
+
+                  <div className="relative z-10">
+                    <span
+                      className={`text-xs font-bold tracking-widest uppercase mb-1 block ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                    >
+                      Ver Código
+                    </span>
+                    <div className="flex items-center justify-between">
+                      <h3
+                        className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                      >
+                        GitHub
+                      </h3>
+                      <ArrowUpRight
+                        size={20}
+                        className={`opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                      />
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://linkedin.com/in/jhon-aq"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`group p-6 rounded-3xl border transition-all duration-300 relative overflow-hidden h-48 flex flex-col justify-between ${
+                    isDarkMode
+                      ? "bg-[#0077b5]/5 border-[#0077b5]/20 hover:bg-[#0077b5]/10 hover:border-[#0077b5]/50"
+                      : "bg-[#0077b5]/5 border-[#0077b5]/20 hover:bg-[#0077b5]/10 hover:shadow-xl hover:shadow-[#0077b5]/10"
+                  }`}
+                >
+                  <div className="absolute right-[-20px] top-[-20px] opacity-[0.1] group-hover:opacity-[0.2] transition-all duration-500 scale-[2.5] rotate-12 text-[#0077b5]">
+                    <Linkedin size={100} />
+                  </div>
+
+                  <div className="relative z-10 w-12 h-12 rounded-full border border-[#0077b5]/30 flex items-center justify-center text-[#0077b5] transition-colors duration-300 group-hover:bg-[#0077b5] group-hover:text-white group-hover:border-transparent">
+                    <Linkedin size={24} />
+                  </div>
+
+                  <div className="relative z-10">
+                    <span className="text-xs font-bold tracking-widest uppercase mb-1 block text-[#0077b5]/60">
+                      Conectar
+                    </span>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-2xl font-bold text-[#0077b5]">
+                        LinkedIn
+                      </h3>
+                      <ArrowUpRight
+                        size={20}
+                        className="text-[#0077b5] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                </a>
               </div>
 
               <div
-                className={`flex items-center gap-4 p-4 rounded-xl backdrop-blur-sm border transition-all ${isDarkMode ? "bg-[#111827]/60 border-white/5" : "bg-white border-slate-200 shadow-sm"}`}
+                className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start reveal delay-500 ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}
               >
-                <div
-                  className={`p-3 rounded-lg ${isDarkMode ? "bg-indigo-500/10 text-indigo-400" : "bg-indigo-100 text-indigo-600"}`}
-                >
-                  <Github size={20} />
-                </div>
-                <div className="flex-1">
-                  <h5
-                    className={`text-sm font-semibold mb-1 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
-                  >
-                    Redes Sociales
-                  </h5>
-                  <div className="flex gap-4">
-                    <a
-                      href="https://github.com/JhonAQ"
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`text-sm font-medium transition-colors ${isDarkMode ? "text-slate-400 hover:text-indigo-400" : "text-slate-500 hover:text-indigo-600"}`}
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href="https://linkedin.com/in/jhon-aq"
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`text-sm font-medium transition-colors ${isDarkMode ? "text-slate-400 hover:text-indigo-400" : "text-slate-500 hover:text-indigo-600"}`}
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
+                <MapPin size={16} />
+                <span className="text-sm font-medium">
+                  Arequipa, Perú - Disponible Remoto
+                </span>
               </div>
             </div>
           </div>
 
           {/* Formulario Estilo Mac con Animación Chat */}
           <div
-            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 ${isDarkMode ? "bg-[#0B1120]/90 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]" : "bg-white/90 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"}`}
+            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 reveal delay-300 ${
+              isDarkMode
+                ? "bg-[#0B1120]/80 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-indigo-500/10"
+                : "bg-white/90 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+            }`}
           >
             {/* Cabecera Mac */}
             <div
-              className={`w-full h-12 flex items-center px-5 gap-2.5 border-b ${isDarkMode ? "bg-white/5 border-white/5" : "bg-slate-50 border-slate-200"}`}
+              className={`w-full h-14 flex items-center px-6 gap-2.5 border-b ${
+                isDarkMode
+                  ? "bg-white/5 border-white/5"
+                  : "bg-slate-50/80 border-slate-200"
+              }`}
             >
-              <div className="w-3 h-3 rounded-full bg-[#ff5f56] shadow-[0_0_5px_rgba(255,95,86,0.3)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-[0_0_5px_rgba(255,189,46,0.3)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#27c93f] shadow-[0_0_5px_rgba(39,201,63,0.3)]"></div>
+              <div className="flex gap-2">
+                <div className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] shadow-sm"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm"></div>
+              </div>
               <div
-                className={`absolute left-1/2 -translate-x-1/2 text-[11px] font-bold tracking-widest uppercase ${isDarkMode ? "text-slate-500" : "text-slate-400"}`}
+                className={`absolute left-1/2 -translate-x-1/2 text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent`}
               >
                 Let's Talk
               </div>
             </div>
 
-            <div className="relative min-h-[480px]">
+            <div className="relative min-h-[520px] md:min-h-[480px]">
               {/* ESTADO 1: FORMULARIO */}
               <div
-                className={`absolute inset-0 p-8 transition-all duration-500 flex flex-col justify-center ${isSubmitting || isSubmitted ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"}`}
+                className={`absolute inset-0 p-6 md:p-10 transition-all duration-500 flex flex-col justify-center ${isSubmitting || isSubmitted ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"}`}
               >
-                <form onSubmit={handleFormSubmit} className="space-y-10">
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <div className="relative z-0 w-full group">
+                <form
+                  onSubmit={handleFormSubmit}
+                  className="space-y-6 md:space-y-8"
+                >
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="name"
+                        className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                      >
+                        Nombre completo
+                      </label>
                       <input
                         type="text"
                         id="name"
                         required
-                        className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                        placeholder=" "
+                        className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
+                          isDarkMode
+                            ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500"
+                            : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                        }`}
+                        placeholder="Ej. Jhonatan Arias"
                       />
-                      <label
-                        htmlFor="name"
-                        className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                      >
-                        Nombre completo
-                      </label>
                     </div>
-                    <div className="relative z-0 w-full group">
+
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="email"
+                        className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                      >
+                        Correo electrónico
+                      </label>
                       <input
                         type="email"
                         id="email"
                         required
-                        className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                        placeholder=" "
+                        className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
+                          isDarkMode
+                            ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500"
+                            : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                        }`}
+                        placeholder="ejemplo@correo.com"
                       />
-                      <label
-                        htmlFor="email"
-                        className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                      >
-                        Correo electrónico
-                      </label>
                     </div>
                   </div>
 
-                  <div className="relative z-0 w-full group">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="message"
+                      className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                    >
+                      Cuéntame sobre tu proyecto
+                    </label>
                     <textarea
                       id="message"
                       rows={4}
                       required
                       value={messageText}
                       onChange={(e) => setMessageText(e.target.value)}
-                      className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors resize-none ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                      placeholder=" "
+                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all resize-none ${
+                        isDarkMode
+                          ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500"
+                          : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                      }`}
+                      placeholder="Hola, estoy buscando ayuda con..."
                     ></textarea>
-                    <label
-                      htmlFor="message"
-                      className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                    >
-                      Cuéntame sobre tu proyecto...
-                    </label>
                   </div>
 
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className={`group relative overflow-hidden inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-500 w-full md:w-auto ${
+                      className={`group relative overflow-hidden inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 w-full sm:w-auto shadow-lg hover:-translate-y-0.5 ${
                         isDarkMode
-                          ? "bg-white text-slate-900 hover:bg-indigo-500 hover:text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
-                          : "bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-[0_10px_20px_rgba(99,102,241,0.3)]"
+                          ? "bg-indigo-600 text-white hover:bg-indigo-500 hover:shadow-indigo-500/25"
+                          : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-indigo-600/25"
                       }`}
                     >
-                      <span className="relative z-10">Enviar Mensaje</span>
+                      <span>Enviar Mensaje</span>
                       <Send
-                        size={16}
-                        className="relative z-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                        size={18}
+                        className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                       />
                     </button>
                   </div>
@@ -262,22 +343,30 @@ const Contact: React.FC = () => {
                       {messageText ||
                         "¡Hola! Me encantaría que trabajemos juntos."}
                     </p>
-                    <div className="text-[10px] text-indigo-200 text-right mt-2 font-medium tracking-wide">
-                      Justo ahora
+                    <div className="text-[10px] text-indigo-100/70 text-right mt-1.5 font-medium tracking-wide">
+                      Enviado • Justo ahora
                     </div>
                   </div>
 
                   {/* Respuesta Automática de JhonAQ */}
                   <div
-                    className={`max-w-[85%] self-start rounded-2xl rounded-tl-sm p-5 shadow-lg animate-fade-in-up animation-delay-400 ${isDarkMode ? "bg-white/10 text-slate-300 border border-white/5" : "bg-white text-slate-600 border border-slate-100"}`}
+                    className={`max-w-[85%] self-start rounded-2xl rounded-tl-sm p-4 shadow-sm animate-fade-in-up animation-delay-400 ${
+                      isDarkMode
+                        ? "bg-[#1E293B] text-slate-300 border border-white/5"
+                        : "bg-white text-slate-600 border border-slate-100"
+                    }`}
                   >
-                    <p className="text-xs font-bold text-emerald-400 mb-2 flex items-center gap-1.5">
-                      <CheckCircle size={14} /> JhonAQ
-                    </p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] text-white font-bold">
+                        JA
+                      </div>
+                      <p className="text-xs font-bold text-indigo-400">
+                        Jhonatan Arias
+                      </p>
+                    </div>
                     <p className="text-sm leading-relaxed">
-                      ¡Mensaje recibido con éxito! Muchas gracias por
-                      escribirme, lo leeré y me pondré en contacto contigo muy
-                      pronto.
+                      ¡Gracias por escribirme! He recibido tu mensaje
+                      correctamente. Te responderé lo antes posible.
                     </p>
                     <div className="text-[10px] text-slate-500 text-right mt-2 font-medium tracking-wide">
                       Automático
