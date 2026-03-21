@@ -157,17 +157,13 @@ const Projects: React.FC = () => {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
-                          isDarkMode
-                            ? "bg-black/20 hover:bg-black/40 text-white border-r border-white/10 last:border-0"
-                            : "bg-white/20 hover:bg-white/40 text-slate-900 border-r border-slate-200/50 last:border-0"
-                        }`}
+                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
                       >
                         <Github
                           size={28}
-                          className={`transition-transform group-hover/btn:scale-110 ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}
+                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                         />
-                        <span className={`font-bold text-xs uppercase tracking-wider ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}>
+                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                           Repo
                         </span>
                       </a>
@@ -177,17 +173,13 @@ const Projects: React.FC = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
-                          isDarkMode
-                            ? "bg-black/20 hover:bg-black/40 text-white border-r border-white/10 last:border-0"
-                            : "bg-white/20 hover:bg-white/40 text-slate-900 border-r border-slate-200/50 last:border-0"
-                        }`}
+                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
                       >
                         <ExternalLink
                           size={28}
-                          className={`transition-transform group-hover/btn:scale-110 ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}
+                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                         />
-                        <span className={`font-bold text-xs uppercase tracking-wider ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}>
+                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                           Web
                         </span>
                       </a>
@@ -197,17 +189,13 @@ const Projects: React.FC = () => {
                         href={project.pitchDeck}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
-                          isDarkMode
-                            ? "bg-black/20 hover:bg-black/40 text-white"
-                            : "bg-white/20 hover:bg-white/40 text-slate-900"
-                        }`}
+                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white"
                       >
                         <FileText
                           size={28}
-                          className={`transition-transform group-hover/btn:scale-110 ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}
+                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                         />
-                        <span className={`font-bold text-xs uppercase tracking-wider ${isDarkMode ? "group-hover/btn:text-indigo-400" : "group-hover/btn:text-indigo-600"}`}>
+                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                           Pitch
                         </span>
                       </a>

@@ -51,16 +51,16 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           <div>
-            <h4 className="text-indigo-500 md:text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3">
+            <h4 className="text-indigo-500 md:text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3 reveal">
               ¿Qué sigue?
             </h4>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-6 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+              className={`text-4xl md:text-5xl font-bold mb-6 transition-colors reveal delay-100 ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
               Trabajemos <span className="text-indigo-500">Juntos.</span>
             </h2>
             <p
-              className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+              className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors reveal delay-200 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
             >
               Actualmente estoy abierto a nuevas oportunidades de trabajo y
               proyectos freelance. Ya sea que tengas una pregunta o simplemente
@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
             <div className="flex flex-col gap-6 mb-10">
               <a
                 href="mailto:jariasq@unsa.edu.pe"
-                className={`group flex items-center justify-between p-8 rounded-3xl border transition-all duration-500 overflow-hidden relative ${
+                className={`group flex items-center justify-between p-8 rounded-3xl border transition-all duration-500 overflow-hidden relative reveal delay-300 ${
                   isDarkMode
                     ? "bg-[#111827] border-white/10 hover:border-indigo-500/50"
                     : "bg-white border-slate-200 hover:border-indigo-500/50 hover:shadow-xl"
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                 </div>
               </a>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 reveal delay-400">
                 <a
                   href="https://github.com/JhonAQ"
                   target="_blank"
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div
-                className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}
+                className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start reveal delay-500 ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}
               >
                 <MapPin size={16} />
                 <span className="text-sm font-medium">
@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
 
           {/* Formulario Estilo Mac con Animación Chat */}
           <div
-            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 ${
+            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 reveal delay-300 ${
               isDarkMode
                 ? "bg-[#0B1120]/80 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-indigo-500/10"
                 : "bg-white/90 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
