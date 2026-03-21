@@ -176,7 +176,11 @@ const Projects: React.FC = () => {
                       </span>
                     ))}
                     {project.tech.length > 4 && (
-                      <span className={`text-[10px] px-1.5 py-0.5 opacity-60 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}>+{project.tech.length - 4}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.5 opacity-60 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                      >
+                        +{project.tech.length - 4}
+                      </span>
                     )}
                   </div>
 
