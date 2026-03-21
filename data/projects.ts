@@ -13,7 +13,6 @@ export const projects: Project[] = [
     title: "Ingresa.pe",
     description: "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
     tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
-    pitchDeck: "#",
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
   },
   {
@@ -29,7 +28,6 @@ export const projects: Project[] = [
     description: "Sistema integral de control de asistencia para el colegio 'Fe y Ciencia'. Automatización mediante códigos QR que genera reportes de puntualidad y envía notificaciones instantáneas de ingreso/salida a los padres vía WhatsApp Web.",
     tech: ["Node.js", "WhatsApp API", "TypeScript", "QR Code"],
     github: "https://github.com/JhonAQ/qr-cole",
-    pitchDeck: "#",
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
   },
   {

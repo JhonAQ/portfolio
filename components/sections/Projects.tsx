@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
                           : "bg-slate-800 text-white hover:bg-slate-900"
                       }`}
                     >
-                      Ver Portal <ExternalLink size={18} />
+                      Visitar Web <ExternalLink size={18} />
                     </a>
                   )}
                   {project.pitchDeck && (
@@ -193,7 +193,7 @@ const Projects: React.FC = () => {
                             : "text-slate-700 hover:text-indigo-600"
                         }`}
                       >
-                        <ExternalLink size={18} /> Demo
+                        <ExternalLink size={18} /> Web
                       </a>
                     )}
                     {project.pitchDeck && (
