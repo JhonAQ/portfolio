@@ -15,7 +15,6 @@ const Education = () => {
         isDarkMode ? "border-white/5" : "border-slate-200"
       }`}
     >
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20 text-center md:text-left">
           <h2
