@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="pt-36 md:pt-48 pb-20 px-4 max-w-6xl mx-auto min-h-[100dvh] flex flex-col justify-center relative"
+      className="pt-24 md:pt-32 pb-20 px-4 max-w-6xl mx-auto min-h-[100dvh] flex flex-col justify-center relative"
     >
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-16 md:gap-8">
         <div className="max-w-2xl flex-1 animate-fade-in-up">
