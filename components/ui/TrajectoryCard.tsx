@@ -12,7 +12,8 @@ import {
   Users,
   GraduationCap,
 } from "lucide-react";
-import { TrajectoryItem, techIcons } from "@/data/education";
+import { TrajectoryItem } from "@/data/education";
+import { techIcons } from "@/data/icons";
 
 // Mapa de iconos: String -> Componente Lucide
 const IconsMap: Record<string, any> = {

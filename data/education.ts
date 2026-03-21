@@ -1,18 +1,3 @@
-export const techIcons: Record<string, { dark: string; light: string }> = {
-  Laravel: { dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/laravel.svg", light: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/laravel.svg" },
-  PHP: { dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/php.svg", light: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/php.svg" },
-  Flutter: { dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/flutter.svg", light: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/flutter.svg" },
-  TypeScript: { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/typescript.svg" },
-  Supabase: { light: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/supabase.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/supabase.svg" },
-  "Next.js": { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/nextdotjs.svg" },
-  PostgreSQL: { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/postgresql.svg" },
-  "React Native": { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/react.svg" },
-  Expo: { light: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/expo.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/expo.svg" },
-  "C++": { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/cplusplus.svg" },
-  Python: { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/python.svg" },
-  "Tailwind CSS": { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/tailwindcss.svg" },
-  Figma: { light: "https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg", dark: "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/figma.svg" },
-};
 
 export interface TrajectoryItem {
   type: string;
