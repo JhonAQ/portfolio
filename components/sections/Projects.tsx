@@ -36,8 +36,19 @@ const Projects: React.FC = () => {
               <div
                 className={`w-full lg:w-1/2 flex flex-col items-start text-left reveal delay-200`}
               >
+                {project.isDeveloping && (
+                  <span className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 border border-amber-500/20 rounded-full">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    En Desarrollo
+                  </span>
+                )}
                 <h3
-                  className={`text-3xl md:text-5xl font-extrabold mb-6 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                  className={`text-3xl md:text-5xl font-extrabold mb-6 transition-colors ${
+                    isDarkMode ? "text-white" : "text-slate-900"
+                  }`}
                 >
                   {project.title}
                 </h3>

@@ -6,6 +6,7 @@ export interface Project {
   demo?: string;
   pitchDeck?: string;
   image: string;
+  isDeveloping?: boolean;
 }
 
 export const projects: Project[] = [
@@ -13,7 +14,8 @@ export const projects: Project[] = [
     title: "Ingresa.pe",
     description: "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
     tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png",
+    isDeveloping: true
   },
   {
     title: "Radical Camp 2025",
