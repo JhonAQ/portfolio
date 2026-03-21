@@ -151,16 +151,20 @@ const Projects: React.FC = () => {
                   />
 
                   {/* Overlay con Botones al Hover */}
-                  <div className="absolute inset-0 bg-[#0B1120]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex z-20">
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
-                        title="Ver Código"
+                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
+                          isDarkMode
+                            ? "bg-[#0B1120]/80 hover:bg-indigo-600/90 text-white border-r border-white/10 last:border-0"
+                            : "bg-white/80 hover:bg-indigo-500/90 text-slate-800 hover:text-white border-r border-slate-200 last:border-0"
+                        }`}
                       >
-                        <Github size={18} />
+                        <Github size={28} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="font-bold text-xs uppercase tracking-wider">Repo</span>
                       </a>
                     )}
                     {project.demo && (
@@ -168,10 +172,14 @@ const Projects: React.FC = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
-                        title="Ver Demo"
+                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
+                          isDarkMode
+                            ? "bg-[#0B1120]/80 hover:bg-indigo-600/90 text-white border-r border-white/10 last:border-0"
+                            : "bg-white/80 hover:bg-indigo-500/90 text-slate-800 hover:text-white border-r border-slate-200 last:border-0"
+                        }`}
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink size={28} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="font-bold text-xs uppercase tracking-wider">Web</span>
                       </a>
                     )}
                     {project.pitchDeck && (
@@ -179,10 +187,14 @@ const Projects: React.FC = () => {
                         href={project.pitchDeck}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
-                        title="Ver Pitch Deck"
+                        className={`flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 group/btn ${
+                          isDarkMode
+                            ? "bg-[#0B1120]/80 hover:bg-indigo-600/90 text-white"
+                            : "bg-white/80 hover:bg-indigo-500/90 text-slate-800 hover:text-white"
+                        }`}
                       >
-                        <FileText size={18} />
+                        <FileText size={28} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="font-bold text-xs uppercase tracking-wider">Pitch</span>
                       </a>
                     )}
                   </div>

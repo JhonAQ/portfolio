@@ -49,7 +49,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             }, 300); // Reducir tiempo de transición final
           }, 300); // Reducir tiempo de espera final
         }
-        
+
         return newProgress;
       });
     }, 100); // Reducir intervalo de actualización (100ms)
