@@ -31,6 +31,7 @@ const IconsMap: Record<string, any> = {
 interface TrajectoryCardProps {
   item: TrajectoryItem;
   isDarkMode: boolean;
+  priority?: boolean;
 }
 
 const getTagStyles = (type: string, isDark: boolean) => {
@@ -65,6 +66,7 @@ const getTagStyles = (type: string, isDark: boolean) => {
 export const TrajectoryCard: React.FC<TrajectoryCardProps> = ({
   item,
   isDarkMode,
+  priority = false,
 }) => {
   const IconComponent = IconsMap[item.icon] || Globe;
 
@@ -151,6 +153,8 @@ export const TrajectoryCard: React.FC<TrajectoryCardProps> = ({
               src={item.image}
               alt="Evidence"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={priority}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>

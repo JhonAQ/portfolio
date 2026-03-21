@@ -39,7 +39,12 @@ const Education = () => {
             className={`relative border-l-2 ml-4 md:ml-6 space-y-16 md:space-y-20 transition-colors ${isDarkMode ? "border-indigo-500/30" : "border-indigo-200"}`}
           >
             {trajectory.map((item, index) => (
-              <TrajectoryCard key={index} item={item} isDarkMode={isDarkMode} />
+              <TrajectoryCard
+                key={index}
+                item={item}
+                isDarkMode={isDarkMode}
+                priority={index < 2}
+              />
             ))}
           </div>
         </div>
