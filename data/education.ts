@@ -36,7 +36,7 @@ export const trajectory: TrajectoryItem[] = [
   },
   {
     type: "work",
-    label: "Trabajo",
+    label: "Trabajo Voluntariado",
     title: "Desarrollador de Software",
     flags: ["pe", "no"],
     subtitle: "IELP (Iglesia Evangélica Luterana - Perú)",
