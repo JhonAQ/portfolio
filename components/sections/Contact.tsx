@@ -61,22 +61,30 @@ const Contact: React.FC = () => {
               <a
                 href="mailto:jariasq@unsa.edu.pe"
                 className={`relative overflow-hidden p-6 rounded-2xl border transition-all duration-300 group ${
-                  isDarkMode 
-                    ? "bg-gradient-to-br from-[#111827]/80 to-[#111827]/40 border-white/5 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)]" 
+                  isDarkMode
+                    ? "bg-gradient-to-br from-[#111827]/80 to-[#111827]/40 border-white/5 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)]"
                     : "bg-white border-slate-200 hover:border-indigo-400 hover:shadow-lg"
                 }`}
               >
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500`}></div>
-                
+                <div
+                  className={`absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500`}
+                ></div>
+
                 <div className="flex items-center gap-4 relative z-10">
-                  <div className={`p-4 rounded-xl transition-colors duration-300 ${isDarkMode ? "bg-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white"}`}>
+                  <div
+                    className={`p-4 rounded-xl transition-colors duration-300 ${isDarkMode ? "bg-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white"}`}
+                  >
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h5 className={`text-sm font-bold tracking-wide uppercase mb-1 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}>
-                      Escríbeme
+                    <h5
+                      className={`text-sm font-bold tracking-wide uppercase mb-1 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                    >
+                      Correo Electrónico
                     </h5>
-                    <p className={`text-lg md:text-xl font-bold transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}>
+                    <p
+                      className={`text-lg md:text-xl font-bold transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
+                    >
                       jariasq@unsa.edu.pe
                     </p>
                   </div>
@@ -89,28 +97,35 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   className={`flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border transition-all duration-300 group ${
-                    isDarkMode 
-                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#111827] hover:border-white/20 hover:scale-[1.02]" 
+                    isDarkMode
+                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#111827] hover:border-white/20 hover:scale-[1.02]"
                       : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md hover:scale-[1.02]"
                   }`}
                 >
-                  <Github size={28} className={isDarkMode ? "text-white" : "text-slate-900"} />
-                  <span className={`font-semibold ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}>
+                  <Github
+                    size={28}
+                    className={isDarkMode ? "text-white" : "text-slate-900"}
+                  />
+                  <span
+                    className={`font-semibold ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                  >
                     GitHub
                   </span>
                 </a>
-                
+
                 <a
                   href="https://linkedin.com/in/jhon-aq"
                   target="_blank"
                   rel="noreferrer"
                   className={`flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border transition-all duration-300 group ${
-                    isDarkMode 
-                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#0077b5]/20 hover:border-[#0077b5]/50 hover:scale-[1.02]" 
+                    isDarkMode
+                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#0077b5]/20 hover:border-[#0077b5]/50 hover:scale-[1.02]"
                       : "bg-white border-slate-200 hover:border-[#0077b5] hover:text-[#0077b5] hover:shadow-md hover:scale-[1.02]"
                   }`}
                 >
-                  <div className={isDarkMode ? "text-[#00A0DC]" : "text-[#0077b5]"}>
+                  <div
+                    className={isDarkMode ? "text-[#00A0DC]" : "text-[#0077b5]"}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
@@ -127,15 +142,21 @@ const Contact: React.FC = () => {
                       <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                   </div>
-                  <span className={`font-semibold transition-colors ${isDarkMode ? "text-slate-300 group-hover:text-[#00A0DC]" : "text-slate-700"}`}>
+                  <span
+                    className={`font-semibold transition-colors ${isDarkMode ? "text-slate-300 group-hover:text-[#00A0DC]" : "text-slate-700"}`}
+                  >
                     LinkedIn
                   </span>
                 </a>
               </div>
 
-              <div className={`flex items-center gap-3 px-4 py-3 rounded-xl border w-fit mx-auto md:mx-0 ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-100 border-slate-200 text-slate-600"}`}>
-                 <MapPin size={16} />
-                 <span className="text-sm font-medium">Arequipa, Perú - Disponible Remoto</span>
+              <div
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl border w-fit mx-auto md:mx-0 ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-100 border-slate-200 text-slate-600"}`}
+              >
+                <MapPin size={16} />
+                <span className="text-sm font-medium">
+                  Arequipa, Perú - Disponible Remoto
+                </span>
               </div>
             </div>
           </div>
