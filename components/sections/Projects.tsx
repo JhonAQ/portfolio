@@ -195,7 +195,7 @@ const Projects: React.FC = () => {
                     {project.title}
                   </h4>
                   <p
-                    className={`text-sm leading-relaxed mb-4 flex-grow line-clamp-3 transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                    className={`text-xs leading-relaxed mb-4 flex-grow transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
                   >
                     {project.description}
                   </p>

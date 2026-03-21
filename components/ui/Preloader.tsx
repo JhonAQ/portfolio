@@ -30,12 +30,12 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     const textInterval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * loadingTexts.length);
       setText(loadingTexts[randomIndex]);
-    }, 800);
+    }, 400);
 
     // Progreso
     const interval = setInterval(() => {
       setProgress((prev) => {
-        const increment = Math.random() * 15;
+        const increment = Math.random() * 20 + 5; // Aumentar velocidad (5 a 25)
         const newProgress = Math.min(prev + increment, 100);
 
         if (newProgress === 100) {
@@ -46,13 +46,13 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             setTimeout(() => {
               document.body.style.overflow = "unset";
               onComplete();
-            }, 500);
-          }, 500);
+            }, 300); // Reducir tiempo de transición final
+          }, 300); // Reducir tiempo de espera final
         }
-
+        
         return newProgress;
       });
-    }, 150);
+    }, 100); // Reducir intervalo de actualización (100ms)
 
     return () => {
       clearInterval(interval);
