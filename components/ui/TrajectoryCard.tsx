@@ -76,7 +76,7 @@ export const TrajectoryCard: React.FC<TrajectoryCardProps> = ({
       <div
         className={`absolute -left-[21px] md:-left-[25px] top-0 h-10 w-10 md:h-12 md:w-12 rounded-full border-4 flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
           isDarkMode
-            ? "bg-indigo-950 border-[#0A0F1C] text-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)]"
+            ? "bg-indigo-950 border-[#0a192f] text-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)]"
             : "bg-white border-slate-50 text-indigo-600 shadow-[0_4px_10px_rgba(99,102,241,0.2)]"
         }`}
       >

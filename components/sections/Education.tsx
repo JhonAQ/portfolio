@@ -11,14 +11,10 @@ const Education = () => {
   return (
     <section
       id="education"
-      className={`relative py-20 overflow-hidden transition-colors duration-500 font-sans ${isDarkMode ? "bg-[#0A0F1C] text-slate-300" : "bg-slate-50 text-slate-600"}`}
+      className={`py-24 border-t transition-colors duration-500 ${
+        isDarkMode ? "border-white/5" : "border-slate-200"
+      }`}
     >
-      <div
-        className={`absolute inset-0 z-[-1] bg-[size:32px_32px] pointer-events-none transition-colors duration-500 ${isDarkMode ? "bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" : "bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)]"}`}
-      ></div>
-      <div
-        className={`absolute top-[10%] left-[10%] w-[500px] h-[500px] rounded-full blur-[120px] z-[-1] pointer-events-none transition-colors duration-1000 ${isDarkMode ? "bg-indigo-600/10" : "bg-indigo-300/30"}`}
-      ></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20 text-center md:text-left">
