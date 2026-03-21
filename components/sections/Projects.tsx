@@ -127,14 +127,14 @@ const Projects: React.FC = () => {
             Otros Proyectos Interesantes
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.slice(3).map((project, index) => (
               <div
                 key={index}
-                className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-2xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
+                className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
               >
                 <div
-                  className={`w-full h-48 relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                  className={`w-full h-40 relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
                 >
                   <div
                     className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
@@ -149,48 +149,18 @@ const Projects: React.FC = () => {
                         "https://via.placeholder.com/800x450/0A0F1C/4F46E5?text=Proyecto";
                     }}
                   />
-                </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <h4
-                    className={`text-xl font-bold mb-3 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
-                  >
-                    {project.title}
-                  </h4>
-                  <p
-                    className={`text-sm leading-relaxed mb-6 flex-grow transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
-                  >
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className={`text-[11px] font-mono px-2.5 py-1 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div
-                    className={`flex items-center gap-4 mt-auto pt-5 border-t transition-colors ${
-                      isDarkMode ? "border-white/5" : "border-slate-200"
-                    }`}
-                  >
+                  {/* Overlay con Botones al Hover */}
+                  <div className="absolute inset-0 bg-[#0B1120]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20">
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
-                          isDarkMode
-                            ? "text-slate-300 hover:text-indigo-400"
-                            : "text-slate-700 hover:text-indigo-600"
-                        }`}
+                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
+                        title="Ver Código"
                       >
-                        <Github size={18} /> Repo
+                        <Github size={18} />
                       </a>
                     )}
                     {project.demo && (
@@ -198,13 +168,10 @@ const Projects: React.FC = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
-                          isDarkMode
-                            ? "text-slate-300 hover:text-indigo-400"
-                            : "text-slate-700 hover:text-indigo-600"
-                        }`}
+                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
+                        title="Ver Demo"
                       >
-                        <ExternalLink size={18} /> Web
+                        <ExternalLink size={18} />
                       </a>
                     )}
                     {project.pitchDeck && (
@@ -212,15 +179,36 @@ const Projects: React.FC = () => {
                         href={project.pitchDeck}
                         target="_blank"
                         rel="noreferrer"
-                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
-                          isDarkMode
-                            ? "text-slate-300 hover:text-indigo-400"
-                            : "text-slate-700 hover:text-indigo-600"
-                        }`}
+                        className="p-2 rounded-full bg-white text-black hover:bg-indigo-500 hover:text-white transition-colors"
+                        title="Ver Pitch Deck"
                       >
-                        <FileText size={18} /> Pitch
+                        <FileText size={18} />
                       </a>
                     )}
+                  </div>
+                </div>
+
+                <div className="p-5 flex flex-col flex-grow">
+                  <h4
+                    className={`text-lg font-bold mb-2 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
+                  >
+                    {project.title}
+                  </h4>
+                  <p
+                    className={`text-sm leading-relaxed mb-4 flex-grow line-clamp-3 transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                  >
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className={`text-[10px] font-mono px-2 py-0.5 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
