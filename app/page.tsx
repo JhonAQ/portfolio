@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/next"
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -10,6 +10,7 @@ import Education from "@/components/sections/Education";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import BackgroundEffects from "@/components/features/BackgroundEffects";
+import Preloader from "@/components/ui/Preloader";
 
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
@@ -19,6 +20,7 @@ import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
   const { isDarkMode } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
   const scrollProgress = useScrollProgress();
   useRevealOnScroll();
 
@@ -27,9 +29,15 @@ export default function Home() {
 
   return (
     <div
-      className={`min-h-screen font-sans selection:bg-indigo-500/30 relative z-0 overflow-x-hidden transition-colors duration-500 cursor-default sm:cursor-none ${isDarkMode ? "bg-[#0A0F1C] text-slate-300" : "bg-slate-50 text-slate-600"}`}
+      className={`min-h-screen font-sans selection:bg-indigo-500/30 relative z-0 overflow-x-hidden transition-colors duration-500 cursor-default sm:cursor-none ${
+        isDarkMode ? "bg-[#0A0F1C] text-slate-300" : "bg-slate-50 text-slate-600"
+      }`}
     >
       <Analytics />
+      
+      {/* Componente de Carga Inicial */}
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      
       <BackgroundEffects />
 
       {/* Barra de progreso de scroll */}

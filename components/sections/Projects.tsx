@@ -127,25 +127,22 @@ const Projects: React.FC = () => {
             Otros Proyectos Interesantes
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.slice(3).map((project, index) => (
               <div
                 key={index}
-                className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-lg overflow-hidden flex flex-row group transition-all duration-300 hover:-translate-y-1 h-32 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_20px_rgba(99,102,241,0.1)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-lg"}`}
+                className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-2xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
               >
-                {/* Imagen Ultra Compacta - Aspect Ratio 4:3 (Landscape) */}
                 <div
-                  className={`w-40 relative overflow-hidden border-r shrink-0 transition-colors ${
-                    isDarkMode ? "border-white/5" : "border-slate-200"
-                  }`}
+                  className={`w-full h-48 relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
                 >
                   <div
-                    className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/20" : "bg-indigo-200/20"}`}
+                    className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
                   ></div>
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src =
@@ -154,60 +151,75 @@ const Projects: React.FC = () => {
                   />
                 </div>
 
-                <div className="p-3 flex flex-col flex-grow justify-between min-w-0">
-                  <div>
-                    <div className="flex justify-between items-start mb-1">
-                      <h4
-                        className={`text-sm font-bold truncate pr-2 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
-                      >
-                        {project.title}
-                      </h4>
-                      <div className="flex gap-1.5 shrink-0">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`transition-colors ${isDarkMode ? "text-slate-500 hover:text-white" : "text-slate-400 hover:text-indigo-600"}`}
-                          >
-                            <Github size={14} />
-                          </a>
-                        )}
-                        {project.demo && (
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`transition-colors ${isDarkMode ? "text-slate-500 hover:text-white" : "text-slate-400 hover:text-indigo-600"}`}
-                          >
-                            <ExternalLink size={14} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h4
+                    className={`text-xl font-bold mb-3 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
+                  >
+                    {project.title}
+                  </h4>
+                  <p
+                    className={`text-sm leading-relaxed mb-6 flex-grow transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                  >
+                    {project.description}
+                  </p>
 
-                    <p
-                      className={`text-[11px] leading-snug line-clamp-2 transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
-                    >
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {project.tech.slice(0, 3).map((tech, i) => (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className={`text-[9px] font-mono px-1.5 py-0.5 rounded border transition-colors ${isDarkMode ? "bg-white/5 text-slate-400 border-white/5" : "bg-slate-100 text-slate-500 border-slate-200"}`}
+                        className={`text-[11px] font-mono px-2.5 py-1 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.tech.length > 3 && (
-                      <span
-                        className={`text-[9px] px-1 py-0.5 opacity-50 ${isDarkMode ? "text-slate-500" : "text-slate-400"}`}
+                  </div>
+
+                  <div
+                    className={`flex items-center gap-4 mt-auto pt-5 border-t transition-colors ${
+                      isDarkMode ? "border-white/5" : "border-slate-200"
+                    }`}
+                  >
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
                       >
-                        +{project.tech.length - 3}
-                      </span>
+                        <Github size={18} /> Repo
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
+                      >
+                        <ExternalLink size={18} /> Web
+                      </a>
+                    )}
+                    {project.pitchDeck && (
+                      <a
+                        href={project.pitchDeck}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
+                      >
+                        <FileText size={18} /> Pitch
+                      </a>
                     )}
                   </div>
                 </div>
