@@ -127,14 +127,17 @@ const Projects: React.FC = () => {
             Otros Proyectos Interesantes
           </h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {projects.slice(3).map((project, index) => (
               <div
                 key={index}
                 className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col sm:flex-row group transition-all duration-500 hover:-translate-y-1 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
               >
+                {/* Contenedor de Imagen con Aspect Ratio Rectangular Fijo */}
                 <div
-                  className={`w-full sm:w-48 h-48 sm:h-auto relative overflow-hidden border-b sm:border-b-0 sm:border-r shrink-0 transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                  className={`w-full sm:w-52 h-48 sm:h-auto relative overflow-hidden border-b sm:border-b-0 sm:border-r shrink-0 transition-colors ${
+                    isDarkMode ? "border-white/5" : "border-slate-200"
+                  }`}
                 >
                   <div
                     className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
@@ -142,7 +145,7 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src =
@@ -151,31 +154,34 @@ const Projects: React.FC = () => {
                   />
                 </div>
 
-                <div className="p-5 flex flex-col flex-grow">
+                <div className="p-4 flex flex-col flex-grow justify-center">
                   <h4
-                    className={`text-lg font-bold mb-2 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
+                    className={`text-lg font-bold mb-1.5 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
                   >
                     {project.title}
                   </h4>
                   <p
-                    className={`text-sm leading-relaxed mb-4 flex-grow line-clamp-3 transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                    className={`text-xs leading-relaxed mb-3 transition-colors line-clamp-2 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
                   >
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.tech.map((tech, i) => (
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.tech.slice(0, 4).map((tech, i) => (
                       <span
                         key={i}
-                        className={`text-[10px] font-mono px-2 py-0.5 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
+                        className={`text-[10px] font-mono px-1.5 py-0.5 rounded whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/5 text-slate-300 border-white/10" : "bg-slate-100/80 text-slate-600 border-slate-200"}`}
                       >
                         {tech}
                       </span>
                     ))}
+                    {project.tech.length > 4 && (
+                      <span className={`text-[10px] px-1.5 py-0.5 opacity-60 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}>+{project.tech.length - 4}</span>
+                    )}
                   </div>
 
                   <div
-                    className={`flex items-center gap-4 mt-auto pt-3 border-t transition-colors ${
+                    className={`flex items-center gap-3 pt-2.5 border-t mt-auto transition-colors ${
                       isDarkMode ? "border-white/5" : "border-slate-200"
                     }`}
                   >
