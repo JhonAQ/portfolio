@@ -9,20 +9,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Ingresa.pe",
+    description: "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
+    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
+    github: "#",
+    demo: "#",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
+  },
+  {
+    title: "Radical Camp 2025",
+    description: "Plataforma oficial del campamento nacional de jóvenes IELP. Sistema de inscripción virtual con integración de pagos Yape y módulo 'Social Feed' multimedia tipo TikTok para compartir fotos y videos del evento. Optimizado para SEO.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/JhonAQ/radical-camp-2025",
+    demo: "https://radicalcamp.vercel.app",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+  },
+  {
+    title: "EduCheck",
+    description: "Sistema integral de control de asistencia para el colegio 'Fe y Ciencia'. Automatización mediante códigos QR que genera reportes de puntualidad y envía notificaciones instantáneas de ingreso/salida a los padres vía WhatsApp Web.",
+    tech: ["Node.js", "WhatsApp API", "TypeScript", "QR Code"],
+    github: "https://github.com/JhonAQ/qr-cole",
+    demo: "#",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
+  },
+  {
     title: "Himnario Adonai",
     description: "Aplicación web que facilita el acceso a los himnos del grupo cristiano 'Adonai'. Migrada a Next.js para un rendimiento óptimo. Incluye búsqueda rápida, diseño responsive y base de datos local mediante SQL.js que funciona sin backend.",
     tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/JhonAQ/himnario-adonai",
     demo: "https://github.com/JhonAQ/himnario-adonai",
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
-  },
-  {
-    title: "QR-Cole",
-    description: "Proyecto de asistencia inteligente y sistema de notificación a padres de familia para colegios y escuelas. Diseñado para optimizar el control de entrada y salida de los alumnos de manera automatizada.",
-    tech: ["TypeScript", "Node.js", "Frontend"],
-    github: "https://github.com/JhonAQ/qr-cole",
-    demo: "https://github.com/JhonAQ/qr-cole",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
   },
   {
     title: "Proyecto Ayni - Hackaton",
