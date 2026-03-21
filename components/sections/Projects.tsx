@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, FileText } from "lucide-react";
 import Mockup3D from "@/components/features/Mockup3D";
 import { projects } from "@/data/projects";
 import { useTheme } from "@/context/ThemeContext";
@@ -60,22 +60,48 @@ const Projects: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`px-6 py-3 rounded-lg font-bold text-sm transition-all flex items-center gap-2 border ${isDarkMode ? "border-white/20 text-white hover:bg-white/10" : "border-slate-800 text-slate-800 hover:bg-slate-100"}`}
-                  >
-                    Código Fuente <Github size={18} />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`px-6 py-3 rounded-lg font-bold text-sm transition-all flex items-center gap-2 shadow-lg ${isDarkMode ? "bg-indigo-500 text-white hover:bg-indigo-600" : "bg-slate-800 text-white hover:bg-slate-900"}`}
-                  >
-                    Ver Portal <ExternalLink size={18} />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`px-6 py-3 rounded-lg font-bold text-sm transition-all flex items-center gap-2 border ${
+                        isDarkMode
+                          ? "border-white/20 text-white hover:bg-white/10"
+                          : "border-slate-800 text-slate-800 hover:bg-slate-100"
+                      }`}
+                    >
+                      Código Fuente <Github size={18} />
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`px-6 py-3 rounded-lg font-bold text-sm transition-all flex items-center gap-2 shadow-lg ${
+                        isDarkMode
+                          ? "bg-indigo-500 text-white hover:bg-indigo-600"
+                          : "bg-slate-800 text-white hover:bg-slate-900"
+                      }`}
+                    >
+                      Ver Portal <ExternalLink size={18} />
+                    </a>
+                  )}
+                  {project.pitchDeck && (
+                    <a
+                      href={project.pitchDeck}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`px-6 py-3 rounded-lg font-bold text-sm transition-all flex items-center gap-2 border ${
+                        isDarkMode
+                          ? "border-white/20 text-white hover:bg-white/10"
+                          : "border-slate-800 text-slate-800 hover:bg-slate-100"
+                      }`}
+                    >
+                      Pitch Deck <FileText size={18} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -138,24 +164,52 @@ const Projects: React.FC = () => {
                   </div>
 
                   <div
-                    className={`flex items-center gap-5 mt-auto pt-5 border-t transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                    className={`flex items-center gap-5 mt-auto pt-5 border-t transition-colors ${
+                      isDarkMode ? "border-white/5" : "border-slate-200"
+                    }`}
                   >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`flex items-center gap-2 font-bold text-sm transition-colors ${isDarkMode ? "text-slate-300 hover:text-indigo-400" : "text-slate-700 hover:text-indigo-600"}`}
-                    >
-                      <Github size={18} /> Repo
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`flex items-center gap-2 font-bold text-sm transition-colors ${isDarkMode ? "text-slate-300 hover:text-indigo-400" : "text-slate-700 hover:text-indigo-600"}`}
-                    >
-                      <ExternalLink size={18} /> Demo
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
+                      >
+                        <Github size={18} /> Repo
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
+                      >
+                        <ExternalLink size={18} /> Demo
+                      </a>
+                    )}
+                    {project.pitchDeck && (
+                      <a
+                        href={project.pitchDeck}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 font-bold text-sm transition-colors ${
+                          isDarkMode
+                            ? "text-slate-300 hover:text-indigo-400"
+                            : "text-slate-700 hover:text-indigo-600"
+                        }`}
+                      >
+                        <FileText size={18} /> Pitch
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
