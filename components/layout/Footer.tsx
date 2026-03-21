@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="col-span-1 md:col-span-1">
             <span
               className={`font-bold text-3xl tracking-tight block mb-4 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
@@ -92,23 +92,19 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="col-span-1 flex flex-col md:items-end justify-between">
-            <button
-              onClick={scrollToTop}
-              className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group hover:-translate-y-2 ${isDarkMode ? "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]" : "bg-white hover:bg-indigo-600 text-indigo-600 hover:text-white border border-slate-200 hover:border-transparent shadow-sm hover:shadow-lg"}`}
-              aria-label="Volver arriba"
-            >
-              <ChevronUp size={20} className="group-hover:animate-bounce" />
-            </button>
-
-            <div className="text-left md:text-right mt-8 md:mt-0">
+          <div className="col-span-1 flex flex-col md:items-end justify-between h-full">
+            <div className="text-left md:text-right">
               <h4
-                className={`font-bold mb-2 uppercase text-xs tracking-widest transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                className={`font-bold mb-4 uppercase text-xs tracking-widest transition-colors ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
               >
                 Status Actual
               </h4>
               <div
-                className={`flex items-center gap-2 text-sm justify-start md:justify-end transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                className={`flex items-center gap-2 text-sm justify-start md:justify-end transition-colors ${
+                  isDarkMode ? "text-slate-400" : "text-slate-600"
+                }`}
               >
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -117,6 +113,18 @@ const Footer: React.FC = () => {
                 Disponible para contratación
               </div>
             </div>
+
+            <button
+              onClick={scrollToTop}
+              className={`mt-6 md:mt-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group hover:-translate-y-2 ${
+                isDarkMode
+                  ? "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]"
+                  : "bg-white hover:bg-indigo-600 text-indigo-600 hover:text-white border border-slate-200 hover:border-transparent shadow-sm hover:shadow-lg"
+              }`}
+              aria-label="Volver arriba"
+            >
+              <ChevronUp size={20} className="group-hover:animate-bounce" />
+            </button>
           </div>
         </div>
 

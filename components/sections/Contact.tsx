@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, MapPin, Github, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Github, Send, CheckCircle, ArrowUpRight } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 const Contact: React.FC = () => {
@@ -60,103 +60,75 @@ const Contact: React.FC = () => {
             <div className="flex flex-col gap-6 mb-10">
               <a
                 href="mailto:jariasq@unsa.edu.pe"
-                className={`relative overflow-hidden p-6 rounded-2xl border transition-all duration-300 group ${
+                className={`group flex items-center justify-between p-8 rounded-3xl border transition-all duration-500 overflow-hidden relative ${
                   isDarkMode
-                    ? "bg-gradient-to-br from-[#111827]/80 to-[#111827]/40 border-white/5 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)]"
-                    : "bg-white border-slate-200 hover:border-indigo-400 hover:shadow-lg"
+                    ? "bg-[#111827] border-white/10 hover:border-indigo-500/50"
+                    : "bg-white border-slate-200 hover:border-indigo-500/50 hover:shadow-xl"
                 }`}
               >
-                <div
-                  className={`absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500`}
-                ></div>
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-indigo-500/10 to-transparent`} />
+                
+                <div className="relative z-10">
+                    <span className={`block text-xs font-bold tracking-widest uppercase mb-2 ${isDarkMode ? "text-indigo-400" : "text-indigo-600"}`}>
+                        Contáctame
+                    </span>
+                    <h3 className={`text-2xl md:text-3xl font-bold break-all ${isDarkMode ? "text-white" : "text-slate-900"}`}>
+                        jariasq@unsa.edu.pe
+                    </h3>
+                </div>
 
-                <div className="flex items-center gap-4 relative z-10">
-                  <div
-                    className={`p-4 rounded-xl transition-colors duration-300 ${isDarkMode ? "bg-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white"}`}
-                  >
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h5
-                      className={`text-sm font-bold tracking-wide uppercase mb-1 ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
-                    >
-                      Correo Electrónico
-                    </h5>
-                    <p
-                      className={`text-lg md:text-xl font-bold transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
-                    >
-                      jariasq@unsa.edu.pe
-                    </p>
-                  </div>
+                <div className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:rotate-45 ${
+                    isDarkMode 
+                        ? "border-white/20 bg-white/5 group-hover:bg-indigo-500 group-hover:border-indigo-500 text-white" 
+                        : "border-slate-200 bg-slate-50 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-900"
+                }`}>
+                    <ArrowUpRight size={20} />
                 </div>
               </a>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex gap-4">
                 <a
                   href="https://github.com/JhonAQ"
                   target="_blank"
                   rel="noreferrer"
-                  className={`flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border transition-all duration-300 group ${
-                    isDarkMode
-                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#111827] hover:border-white/20 hover:scale-[1.02]"
-                      : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md hover:scale-[1.02]"
+                  className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-xl font-bold transition-all duration-300 group ${
+                    isDarkMode 
+                      ? "bg-[#111827] border border-white/10 hover:bg-white hover:text-black" 
+                      : "bg-white border border-slate-200 hover:bg-black hover:text-white"
                   }`}
                 >
-                  <Github
-                    size={28}
-                    className={isDarkMode ? "text-white" : "text-slate-900"}
-                  />
-                  <span
-                    className={`font-semibold ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
-                  >
-                    GitHub
-                  </span>
+                  <Github size={20} />
+                  <span>GitHub</span>
                 </a>
-
+                
                 <a
                   href="https://linkedin.com/in/jhon-aq"
                   target="_blank"
                   rel="noreferrer"
-                  className={`flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border transition-all duration-300 group ${
-                    isDarkMode
-                      ? "bg-[#111827]/60 border-white/5 hover:bg-[#0077b5]/20 hover:border-[#0077b5]/50 hover:scale-[1.02]"
-                      : "bg-white border-slate-200 hover:border-[#0077b5] hover:text-[#0077b5] hover:shadow-md hover:scale-[1.02]"
-                  }`}
+                  className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-xl font-bold transition-all duration-300 group text-white bg-[#0077b5] hover:bg-[#005fa3] hover:shadow-lg hover:shadow-[#0077b5]/30`}
                 >
-                  <div
-                    className={isDarkMode ? "text-[#00A0DC]" : "text-[#0077b5]"}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </div>
-                  <span
-                    className={`font-semibold transition-colors ${isDarkMode ? "text-slate-300 group-hover:text-[#00A0DC]" : "text-slate-700"}`}
-                  >
-                    LinkedIn
-                  </span>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <span>LinkedIn</span>
                 </a>
               </div>
 
-              <div
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl border w-fit mx-auto md:mx-0 ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-100 border-slate-200 text-slate-600"}`}
-              >
-                <MapPin size={16} />
-                <span className="text-sm font-medium">
-                  Arequipa, Perú - Disponible Remoto
-                </span>
+              <div className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}>
+                 <MapPin size={16} />
+                 <span className="text-sm font-medium">Arequipa, Perú - Disponible Remoto</span>
               </div>
             </div>
           </div>
@@ -309,22 +281,27 @@ const Contact: React.FC = () => {
                       {messageText ||
                         "¡Hola! Me encantaría que trabajemos juntos."}
                     </p>
-                    <div className="text-[10px] text-indigo-200 text-right mt-2 font-medium tracking-wide">
-                      Justo ahora
+                    <div className="text-[10px] text-indigo-100/70 text-right mt-1.5 font-medium tracking-wide">
+                      Enviado • Justo ahora
                     </div>
                   </div>
 
                   {/* Respuesta Automática de JhonAQ */}
                   <div
-                    className={`max-w-[85%] self-start rounded-2xl rounded-tl-sm p-5 shadow-lg animate-fade-in-up animation-delay-400 ${isDarkMode ? "bg-white/10 text-slate-300 border border-white/5" : "bg-white text-slate-600 border border-slate-100"}`}
+                    className={`max-w-[85%] self-start rounded-2xl rounded-tl-sm p-4 shadow-sm animate-fade-in-up animation-delay-400 ${
+                      isDarkMode 
+                        ? "bg-[#1E293B] text-slate-300 border border-white/5" 
+                        : "bg-white text-slate-600 border border-slate-100"
+                    }`}
                   >
-                    <p className="text-xs font-bold text-emerald-400 mb-2 flex items-center gap-1.5">
-                      <CheckCircle size={14} /> JhonAQ
-                    </p>
+                   <div className="flex items-center gap-2 mb-2">
+                      <div className="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] text-white font-bold">
+                        JA
+                      </div>
+                      <p className="text-xs font-bold text-indigo-400">Jhonatan Arias</p>
+                    </div>
                     <p className="text-sm leading-relaxed">
-                      ¡Mensaje recibido con éxito! Muchas gracias por
-                      escribirme, lo leeré y me pondré en contacto contigo muy
-                      pronto.
+                      ¡Gracias por escribirme! He recibido tu mensaje correctamente. Te responderé lo antes posible.
                     </p>
                     <div className="text-[10px] text-slate-500 text-right mt-2 font-medium tracking-wide">
                       Automático

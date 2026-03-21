@@ -19,7 +19,7 @@ export const trajectory: TrajectoryItem[] = [
     title: "Desarrollador de Software",
     flags: ["mx"],
     subtitle: "ACRU (México) | Misioneros Digitales",
-    date: "Desde 2026",
+    date: "2026",
     description: "Desarrollé sistemas de uso interno para la organización. Fui responsable de la creación de soluciones digitales a medida, incluyendo la implementación de plugins personalizados para WordPress.",
     icon: "Globe",
     tech: ["Laravel", "PHP", "Flutter"]
@@ -40,7 +40,7 @@ export const trajectory: TrajectoryItem[] = [
     title: "Desarrollador de Software",
     flags: ["pe", "no"],
     subtitle: "IELP (Iglesia Evangélica Luterana - Perú)",
-    date: "Desde 2025",
+    date: "2025",
     description: "Lideré la digitalización de la organización. Desarrollé una landing page interactiva para el Campamento Nacional de Jóvenes (Radical) y programé una aplicación móvil de himnario que actualmente se encuentra en producción.",
     icon: "HeartHandshake",
     tech: ["PostgreSQL", "Next.js", "React Native", "Expo"]
