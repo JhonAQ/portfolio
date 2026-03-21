@@ -142,92 +142,113 @@ const Contact: React.FC = () => {
 
           {/* Formulario Estilo Mac con Animación Chat */}
           <div
-            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 ${isDarkMode ? "bg-[#0B1120]/90 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]" : "bg-white/90 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"}`}
+            className={`backdrop-blur-xl border rounded-2xl relative overflow-hidden transition-all duration-500 ${
+              isDarkMode 
+                ? "bg-[#0B1120]/80 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-indigo-500/10" 
+                : "bg-white/90 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+            }`}
           >
             {/* Cabecera Mac */}
             <div
-              className={`w-full h-12 flex items-center px-5 gap-2.5 border-b ${isDarkMode ? "bg-white/5 border-white/5" : "bg-slate-50 border-slate-200"}`}
+              className={`w-full h-14 flex items-center px-6 gap-2.5 border-b ${
+                isDarkMode ? "bg-white/5 border-white/5" : "bg-slate-50/80 border-slate-200"
+              }`}
             >
-              <div className="w-3 h-3 rounded-full bg-[#ff5f56] shadow-[0_0_5px_rgba(255,95,86,0.3)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-[0_0_5px_rgba(255,189,46,0.3)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#27c93f] shadow-[0_0_5px_rgba(39,201,63,0.3)]"></div>
+              <div className="flex gap-2">
+                <div className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] shadow-sm"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm"></div>
+              </div>
               <div
-                className={`absolute left-1/2 -translate-x-1/2 text-[11px] font-bold tracking-widest uppercase ${isDarkMode ? "text-slate-500" : "text-slate-400"}`}
+                className={`absolute left-1/2 -translate-x-1/2 text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent`}
               >
                 Let's Talk
               </div>
             </div>
 
-            <div className="relative min-h-[480px]">
+            <div className="relative min-h-[520px] md:min-h-[480px]">
               {/* ESTADO 1: FORMULARIO */}
               <div
-                className={`absolute inset-0 p-8 transition-all duration-500 flex flex-col justify-center ${isSubmitting || isSubmitted ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"}`}
+                className={`absolute inset-0 p-6 md:p-10 transition-all duration-500 flex flex-col justify-center ${isSubmitting || isSubmitted ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"}`}
               >
-                <form onSubmit={handleFormSubmit} className="space-y-10">
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <div className="relative z-0 w-full group">
+                <form onSubmit={handleFormSubmit} className="space-y-6 md:space-y-8">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label 
+                        htmlFor="name" 
+                        className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                      >
+                        Nombre completo
+                      </label>
                       <input
                         type="text"
                         id="name"
                         required
-                        className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                        placeholder=" "
+                        className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
+                          isDarkMode 
+                            ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500" 
+                            : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                        }`}
+                        placeholder="Ej. Juan Pérez"
                       />
-                      <label
-                        htmlFor="name"
-                        className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                      >
-                        Nombre completo
-                      </label>
                     </div>
-                    <div className="relative z-0 w-full group">
+                    
+                    <div className="space-y-2">
+                      <label 
+                        htmlFor="email" 
+                        className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                      >
+                        Correo electrónico
+                      </label>
                       <input
                         type="email"
                         id="email"
                         required
-                        className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                        placeholder=" "
+                        className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
+                          isDarkMode 
+                            ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500" 
+                            : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                        }`}
+                        placeholder="ejemplo@correo.com"
                       />
-                      <label
-                        htmlFor="email"
-                        className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                      >
-                        Correo electrónico
-                      </label>
                     </div>
                   </div>
 
-                  <div className="relative z-0 w-full group">
+                  <div className="space-y-2">
+                    <label 
+                      htmlFor="message" 
+                      className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
+                    >
+                      Cuéntame sobre tu proyecto
+                    </label>
                     <textarea
                       id="message"
                       rows={4}
                       required
                       value={messageText}
                       onChange={(e) => setMessageText(e.target.value)}
-                      className={`block py-3 px-0 w-full text-base bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer transition-colors resize-none ${isDarkMode ? "text-white border-white/20 focus:border-indigo-400" : "text-slate-900 border-slate-300 focus:border-indigo-600"}`}
-                      placeholder=" "
+                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all resize-none ${
+                        isDarkMode 
+                          ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500" 
+                          : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
+                      }`}
+                      placeholder="Hola, estoy buscando ayuda con..."
                     ></textarea>
-                    <label
-                      htmlFor="message"
-                      className={`absolute text-base duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${isDarkMode ? "text-slate-400 peer-focus:text-indigo-400" : "text-slate-500 peer-focus:text-indigo-600"}`}
-                    >
-                      Cuéntame sobre tu proyecto...
-                    </label>
                   </div>
 
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className={`group relative overflow-hidden inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-500 w-full md:w-auto ${
+                      className={`group relative overflow-hidden inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 w-full sm:w-auto shadow-lg hover:-translate-y-0.5 ${
                         isDarkMode
-                          ? "bg-white text-slate-900 hover:bg-indigo-500 hover:text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
-                          : "bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-[0_10px_20px_rgba(99,102,241,0.3)]"
+                          ? "bg-indigo-600 text-white hover:bg-indigo-500 hover:shadow-indigo-500/25"
+                          : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-indigo-600/25"
                       }`}
                     >
-                      <span className="relative z-10">Enviar Mensaje</span>
+                      <span>Enviar Mensaje</span>
                       <Send
-                        size={16}
-                        className="relative z-10 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                        size={18}
+                        className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                       />
                     </button>
                   </div>

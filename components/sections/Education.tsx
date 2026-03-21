@@ -4,9 +4,11 @@ import React from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { trajectory } from "@/data/education";
 import { TrajectoryCard } from "@/components/ui/TrajectoryCard";
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 
 const Education = () => {
   const { isDarkMode } = useTheme();
+  useRevealOnScroll();
 
   return (
     <section
@@ -16,7 +18,7 @@ const Education = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-20 text-center md:text-left">
+        <div className="mb-20 text-center md:text-left reveal">
           <h2
             className={`text-4xl md:text-5xl font-bold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
           >
@@ -34,12 +36,13 @@ const Education = () => {
             className={`relative border-l-2 ml-4 md:ml-6 space-y-16 md:space-y-20 transition-colors ${isDarkMode ? "border-indigo-500/30" : "border-indigo-200"}`}
           >
             {trajectory.map((item, index) => (
-              <TrajectoryCard
-                key={index}
-                item={item}
-                isDarkMode={isDarkMode}
-                priority={index < 2}
-              />
+              <div key={index} className="reveal">
+                <TrajectoryCard
+                  item={item}
+                  isDarkMode={isDarkMode}
+                  priority={index < 2}
+                />
+              </div>
             ))}
           </div>
         </div>
