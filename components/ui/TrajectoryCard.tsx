@@ -76,113 +76,130 @@ export const TrajectoryCard: React.FC<TrajectoryCardProps> = ({
       <div
         className={`absolute -left-[21px] md:-left-[25px] top-0 h-10 w-10 md:h-12 md:w-12 rounded-full border-4 flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
           isDarkMode
-            ? "bg-indigo-950 border-[#0a192f] text-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.3)]"
-            : "bg-white border-slate-50 text-indigo-600 shadow-[0_4px_10px_rgba(99,102,241,0.2)]"
+            ? "bg-[#0A0F1C] border-indigo-500 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(99,102,241,0.6)]"
+            : "bg-white border-indigo-400 text-indigo-600 group-hover:bg-indigo-500 group-hover:border-indigo-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]"
         }`}
       >
         <IconComponent size={20} />
       </div>
 
-      {/* Contenido de la tarjeta */}
-      <div
-        className={`relative p-6 rounded-2xl border transition-all duration-300 ${
-          isDarkMode
-            ? "bg-[#111827]/80 backdrop-blur-sm border-slate-800/50 hover:border-indigo-500/30 hover:shadow-[0_4px_20px_rgba(99,102,241,0.15)]"
-            : "bg-white/80 backdrop-blur-sm border-indigo-100 hover:border-indigo-300 hover:shadow-lg"
-        }`}
-      >
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-          <div>
-            <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start lg:items-center w-full">
+        {/* LA CARD DE TEXTO */}
+        <div
+          className={`flex-1 w-full p-6 md:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 ${
+            isDarkMode
+              ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/30 hover:bg-[#111827]/90 hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
+              : "bg-white border-slate-200 hover:border-indigo-200 hover:shadow-[0_15px_30px_rgba(0,0,0,0.08)]"
+          }`}
+        >
+          <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
+            <div>
               <span
-                className={`px-3 py-1 text-xs font-semibold rounded-full border ${getTagStyles(
+                className={`inline-block mb-3 text-[10px] md:text-xs font-extrabold tracking-widest uppercase border px-3 py-1 rounded-full ${getTagStyles(
                   item.type,
                   isDarkMode,
                 )}`}
               >
                 {item.label}
               </span>
-              <span
-                className={`text-sm font-medium ${
-                  isDarkMode ? "text-slate-400" : "text-slate-500"
+              <h3
+                className={`text-xl md:text-2xl font-bold flex items-center flex-wrap gap-2 transition-colors ${
+                  isDarkMode
+                    ? "text-white group-hover:text-indigo-300"
+                    : "text-slate-900 group-hover:text-indigo-600"
                 }`}
               >
-                {item.date}
-              </span>
-              {item.flags && (
-                <div className="flex gap-1.5 ml-1">
-                  {item.flags.map((flag, idx) => (
-                    <span
-                      key={idx}
-                      className={`fi fi-${flag} rounded-sm shadow-sm`}
+                {item.title}
+                {/* Banderas */}
+                {item.flags &&
+                  item.flags.map((flag) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={flag}
+                      src={`https://flagcdn.com/w20/${flag}.png`}
+                      alt={`Bandera ${flag}`}
+                      className="inline-block w-6 h-auto rounded-[2px] shadow-sm ml-1"
                     />
                   ))}
-                </div>
-              )}
+              </h3>
             </div>
-            <h3
-              className={`text-xl font-bold mb-1 ${
-                isDarkMode ? "text-slate-100" : "text-slate-800"
+            <span
+              className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border shrink-0 ${
+                isDarkMode
+                  ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+                  : "bg-indigo-50 text-indigo-600 border-indigo-200"
               }`}
             >
-              {item.title}
-            </h3>
-            <p
-              className={`text-sm font-medium ${
-                isDarkMode ? "text-indigo-400" : "text-indigo-600"
-              }`}
-            >
-              {item.subtitle}
-            </p>
+              {item.date}
+            </span>
           </div>
+          <h4
+            className={`text-base md:text-lg font-semibold mb-4 transition-colors ${
+              isDarkMode ? "text-slate-300" : "text-slate-700"
+            }`}
+          >
+            {item.subtitle}
+          </h4>
+          <p
+            className={`leading-relaxed text-sm md:text-base transition-colors ${
+              isDarkMode ? "text-slate-400" : "text-slate-600"
+            }`}
+          >
+            {item.description}
+          </p>
+
+          {/* STACK TECNOLÓGICO */}
+          {item.tech && item.tech.length > 0 && (
+            <div
+              className={`mt-6 pt-5 flex flex-wrap gap-2.5 border-t ${
+                isDarkMode ? "border-white/10" : "border-slate-200"
+              }`}
+            >
+              {item.tech.map((techName, i) => (
+                <span
+                  key={i}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium border transition-colors ${
+                    isDarkMode
+                      ? "bg-white/5 text-slate-300 border-white/10"
+                      : "bg-slate-50 text-slate-600 border-slate-200"
+                  }`}
+                >
+                  {techIcons[techName] && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={
+                        isDarkMode
+                          ? techIcons[techName].dark
+                          : techIcons[techName].light
+                      }
+                      alt={techName}
+                      className={`w-3.5 h-3.5 opacity-80 ${
+                        isDarkMode ? "brightness-0 invert" : ""
+                      }`}
+                    />
+                  )}
+                  {techName}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
-        <p
-          className={`mb-4 text-sm leading-relaxed ${
-            isDarkMode ? "text-slate-300" : "text-slate-600"
-          }`}
-        >
-          {item.description}
-        </p>
-
-        {/* Imagen opcional */}
+        {/* LA IMAGEN EXTERIOR */}
         {item.image && (
-          <div className="mb-4 relative w-full h-48 md:h-56 rounded-xl overflow-hidden border border-slate-200/10">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-            <Image
-              src={item.image}
-              alt="Evidence"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={priority}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        )}
-
-        {/* Stack Tecnológico */}
-        {item.tech && item.tech.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-dashed border-slate-700/30">
-            {item.tech.map((tech) => (
-              <div
-                key={tech}
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md border transition-colors ${
-                  isDarkMode
-                    ? "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700"
-                    : "bg-slate-100 border-slate-200 text-slate-600 hover:bg-slate-200"
-                }`}
-                title={tech}
-              >
-                <img
-                  src={
-                    isDarkMode ? techIcons[tech]?.dark : techIcons[tech]?.light
-                  }
-                  alt={tech}
-                  className="w-3.5 h-3.5 opacity-90"
-                />
-                <span className="text-xs font-medium">{tech}</span>
-              </div>
-            ))}
+          <div className="shrink-0 flex justify-center items-center lg:pl-2 w-full lg:w-auto">
+            <div className="relative inline-block p-2 md:p-2.5 pb-8 md:pb-10 bg-white rounded-sm shadow-[0_15px_35px_rgba(0,0,0,0.25)] transform md:rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 z-10 max-w-[280px] lg:max-w-[320px]">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-white/60 backdrop-blur-md shadow-sm transform -rotate-2 border border-black/5 z-20"></div>
+              <Image
+                src={item.image}
+                alt={`Foto de ${item.title}`}
+                width={320}
+                height={220}
+                className="w-auto h-auto max-w-full max-h-[220px] md:max-h-[280px] object-contain rounded-sm border border-slate-200"
+                priority={priority}
+                sizes="(max-width: 768px) 100vw, 320px"
+              />
+            </div>
           </div>
         )}
       </div>
