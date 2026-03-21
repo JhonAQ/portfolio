@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className={`pt-32 pb-16 border-t relative overflow-hidden reveal transition-colors duration-500 ${
+      className={`pt-20 pb-16 border-t relative overflow-hidden reveal transition-colors duration-500 ${
         isDarkMode ? "border-white/5" : "border-slate-200"
       }`}
     >
