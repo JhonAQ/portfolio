@@ -83,7 +83,7 @@ const About: React.FC = () => {
                           className={`flex items-center gap-2 px-3 py-1.5 rounded-md font-medium text-xs border transition-all duration-300 cursor-default group hover:-translate-y-1 ${isDarkMode ? "bg-white/5 text-slate-300 border-white/10 hover:border-indigo-500/50 hover:bg-indigo-500/20 hover:text-white hover:shadow-[0_5px_15px_rgba(99,102,241,0.2)]" : "bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 shadow-sm hover:shadow-md"}`}
                         >
                           <img
-                            src={isDarkMode ? skill.dark : skill.light}
+                            src={(isDarkMode ? (skill.dark || skill.light) : skill.light) || ""}
                             alt={skill.name}
                             className={`w-3.5 h-3.5 transition-all opacity-80 group-hover:opacity-100 ${isDarkMode ? "brightness-0 invert group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]" : ""}`}
                             onError={(e) => {
@@ -122,7 +122,7 @@ const About: React.FC = () => {
                 title={skill.name}
               >
                 <img
-                  src={isDarkMode ? skill.dark : skill.light}
+                  src={(isDarkMode ? (skill.dark || skill.light) : skill.light) || ""}
                   alt={skill.name}
                   className={`h-14 md:h-20 w-auto transform group-hover:scale-110 transition-transform duration-300 ${isDarkMode ? "brightness-0 invert" : ""}`}
                 />
