@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, MapPin, Github, Send, CheckCircle, ArrowUpRight } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  CheckCircle,
+  ArrowUpRight,
+} from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 const Contact: React.FC = () => {
@@ -66,69 +74,121 @@ const Contact: React.FC = () => {
                     : "bg-white border-slate-200 hover:border-indigo-500/50 hover:shadow-xl"
                 }`}
               >
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-indigo-500/10 to-transparent`} />
-                
+                <div
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-indigo-500/10 to-transparent`}
+                />
+
                 <div className="relative z-10">
-                    <span className={`block text-xs font-bold tracking-widest uppercase mb-2 ${isDarkMode ? "text-indigo-400" : "text-indigo-600"}`}>
-                        Contáctame
-                    </span>
-                    <h3 className={`text-2xl md:text-3xl font-bold break-all ${isDarkMode ? "text-white" : "text-slate-900"}`}>
-                        jariasq@unsa.edu.pe
-                    </h3>
+                  <span
+                    className={`block text-xs font-bold tracking-widest uppercase mb-2 ${isDarkMode ? "text-indigo-400" : "text-indigo-600"}`}
+                  >
+                    Contáctame
+                  </span>
+                  <h3
+                    className={`text-2xl md:text-3xl font-bold break-all ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                  >
+                    jariasq@unsa.edu.pe
+                  </h3>
                 </div>
 
-                <div className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:rotate-45 ${
-                    isDarkMode 
-                        ? "border-white/20 bg-white/5 group-hover:bg-indigo-500 group-hover:border-indigo-500 text-white" 
-                        : "border-slate-200 bg-slate-50 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-900"
-                }`}>
-                    <ArrowUpRight size={20} />
+                <div
+                  className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:rotate-45 ${
+                    isDarkMode
+                      ? "border-white/20 bg-white/5 group-hover:bg-indigo-500 group-hover:border-indigo-500 text-white"
+                      : "border-slate-200 bg-slate-50 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-900"
+                  }`}
+                >
+                  <ArrowUpRight size={20} />
                 </div>
               </a>
 
-              <div className="flex gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a
                   href="https://github.com/JhonAQ"
                   target="_blank"
                   rel="noreferrer"
-                  className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-xl font-bold transition-all duration-300 group ${
-                    isDarkMode 
-                      ? "bg-[#111827] border border-white/10 hover:bg-white hover:text-black" 
-                      : "bg-white border border-slate-200 hover:bg-black hover:text-white"
+                  className={`group p-6 rounded-3xl border transition-all duration-300 relative overflow-hidden h-48 flex flex-col justify-between ${
+                    isDarkMode
+                      ? "bg-[#111827] border-white/10 hover:border-white/30 hover:bg-white/5"
+                      : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-xl hover:bg-slate-50"
                   }`}
                 >
-                  <Github size={20} />
-                  <span>GitHub</span>
+                  <div className="absolute right-[-20px] top-[-20px] opacity-[0.05] group-hover:opacity-[0.1] transition-all duration-500 scale-[2.5] rotate-12">
+                    <Github size={100} />
+                  </div>
+
+                  <div
+                    className={`relative z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-colors duration-300 ${
+                      isDarkMode
+                        ? "border-white/20 group-hover:bg-white group-hover:text-black group-hover:border-transparent"
+                        : "border-slate-200 group-hover:bg-black group-hover:text-white group-hover:border-transparent"
+                    }`}
+                  >
+                    <Github size={24} />
+                  </div>
+
+                  <div className="relative z-10">
+                    <span
+                      className={`text-xs font-bold tracking-widest uppercase mb-1 block ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                    >
+                      Ver Código
+                    </span>
+                    <div className="flex items-center justify-between">
+                      <h3
+                        className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                      >
+                        GitHub
+                      </h3>
+                      <ArrowUpRight
+                        size={20}
+                        className={`opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ${isDarkMode ? "text-white" : "text-slate-900"}`}
+                      />
+                    </div>
+                  </div>
                 </a>
-                
+
                 <a
                   href="https://linkedin.com/in/jhon-aq"
                   target="_blank"
                   rel="noreferrer"
-                  className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-xl font-bold transition-all duration-300 group text-white bg-[#0077b5] hover:bg-[#005fa3] hover:shadow-lg hover:shadow-[#0077b5]/30`}
+                  className={`group p-6 rounded-3xl border transition-all duration-300 relative overflow-hidden h-48 flex flex-col justify-between ${
+                    isDarkMode
+                      ? "bg-[#0077b5]/5 border-[#0077b5]/20 hover:bg-[#0077b5]/10 hover:border-[#0077b5]/50"
+                      : "bg-[#0077b5]/5 border-[#0077b5]/20 hover:bg-[#0077b5]/10 hover:shadow-xl hover:shadow-[#0077b5]/10"
+                  }`}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                  <span>LinkedIn</span>
+                  <div className="absolute right-[-20px] top-[-20px] opacity-[0.1] group-hover:opacity-[0.2] transition-all duration-500 scale-[2.5] rotate-12 text-[#0077b5]">
+                    <Linkedin size={100} />
+                  </div>
+
+                  <div className="relative z-10 w-12 h-12 rounded-full border border-[#0077b5]/30 flex items-center justify-center text-[#0077b5] transition-colors duration-300 group-hover:bg-[#0077b5] group-hover:text-white group-hover:border-transparent">
+                    <Linkedin size={24} />
+                  </div>
+
+                  <div className="relative z-10">
+                    <span className="text-xs font-bold tracking-widest uppercase mb-1 block text-[#0077b5]/60">
+                      Conectar
+                    </span>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-2xl font-bold text-[#0077b5]">
+                        LinkedIn
+                      </h3>
+                      <ArrowUpRight
+                        size={20}
+                        className="text-[#0077b5] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
                 </a>
               </div>
 
-              <div className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}>
-                 <MapPin size={16} />
-                 <span className="text-sm font-medium">Arequipa, Perú - Disponible Remoto</span>
+              <div
+                className={`flex items-center justify-center gap-3 px-4 py-3 rounded-xl border w-full md:w-auto self-start ${isDarkMode ? "bg-white/5 border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-600"}`}
+              >
+                <MapPin size={16} />
+                <span className="text-sm font-medium">
+                  Arequipa, Perú - Disponible Remoto
+                </span>
               </div>
             </div>
           </div>
@@ -289,19 +349,22 @@ const Contact: React.FC = () => {
                   {/* Respuesta Automática de JhonAQ */}
                   <div
                     className={`max-w-[85%] self-start rounded-2xl rounded-tl-sm p-4 shadow-sm animate-fade-in-up animation-delay-400 ${
-                      isDarkMode 
-                        ? "bg-[#1E293B] text-slate-300 border border-white/5" 
+                      isDarkMode
+                        ? "bg-[#1E293B] text-slate-300 border border-white/5"
                         : "bg-white text-slate-600 border border-slate-100"
                     }`}
                   >
-                   <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] text-white font-bold">
                         JA
                       </div>
-                      <p className="text-xs font-bold text-indigo-400">Jhonatan Arias</p>
+                      <p className="text-xs font-bold text-indigo-400">
+                        Jhonatan Arias
+                      </p>
                     </div>
                     <p className="text-sm leading-relaxed">
-                      ¡Gracias por escribirme! He recibido tu mensaje correctamente. Te responderé lo antes posible.
+                      ¡Gracias por escribirme! He recibido tu mensaje
+                      correctamente. Te responderé lo antes posible.
                     </p>
                     <div className="text-[10px] text-slate-500 text-right mt-2 font-medium tracking-wide">
                       Automático

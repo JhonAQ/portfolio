@@ -33,43 +33,59 @@ export const projects: Project[] = [
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
   },
   {
-    title: "Himnario Adonai",
-    description: "Aplicación web que facilita el acceso a los himnos del grupo cristiano 'Adonai'. Migrada a Next.js para un rendimiento óptimo. Incluye búsqueda rápida, diseño responsive y base de datos local mediante SQL.js que funciona sin backend.",
-    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/JhonAQ/himnario-adonai",
-    demo: "https://github.com/JhonAQ/himnario-adonai",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
-  },
-  {
-    title: "Proyecto Ayni - Hackaton",
-    description: "Proyecto desarrollado durante la Hackaton InnovaSur 2025 enfocado en resolver problemáticas locales a través de la tecnología colaborativa (Ayni).",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/JhonAQ/InnovaSur",
-    demo: "https://github.com/JhonAQ/InnovaSur",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+    title: "WaOS Simulator",
+    description: "Software educativo de alto nivel para simulación de Sistemas Operativos. Visualiza algoritmos de scheduling (Round Robin, FIFO, etc.) y gestión de memoria (Paginación, Segmentación) con diagramas de Gantt y mapas de memoria en tiempo real. Desarrollado en C++ con Qt.",
+    tech: ["C++", "Qt Framework", "Algorithms", "OS Theory"],
+    github: "https://github.com/Alfahajor/WaOS",
+    demo: "https://github.com/Alfahajor/WaOS",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/episunsa.png"
   },
   {
     title: "Knowledge Wardens",
-    description: "Un juego/aplicación interactiva. 'El poderoso brujo ha poseído a tu maestro... busca a los guardianes del conocimiento y véncelo'. Proyecto colaborativo enfocado en la lógica y entretenimiento.",
-    tech: ["TypeScript", "Frontend"],
-    github: "https://github.com/JhonAQ/knowledge-wardens",
-    demo: "https://github.com/JhonAQ/knowledge-wardens",
+    description: "RPG educativo web impulsado por IA (Vercel SDK). Los jugadores aprenden fundamentos de programación en un mundo de fantasía, resolviendo desafíos generados dinámicamente según el tema de estudio. Ganador de Hackathon.",
+    tech: ["Unity WebGL", "Vercel AI SDK", "Game Design", "React"],
+    github: "https://github.com/gustadev24/knowledge-wardens",
+    demo: "https://knowledge-wardens.vercel.app",
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/rps.png"
   },
   {
-    title: "Salve Paz",
-    description: "Aplicación basada en Java para expresar gratitud a un maestro estimado, utilizando las librerías gráficas/lógicas Galapagos y EpisUnsa.",
-    tech: ["Java", "Galapagos", "EpisUnsa"],
-    github: "https://github.com/JhonAQ/salve-paz",
-    demo: "https://github.com/JhonAQ/salve-paz",
+    title: "TeToca",
+    description: "SaaS B2B para la gestión inteligente de colas virtuales. Permite a los establecimientos descongestionar sus espacios físicos mediante un sistema de turnos digitales y atención optimizada. Proyecto final de Ingeniería de Software.",
+    tech: ["React Native", "Node.js", "SaaS", "UX Research"],
+    github: "https://github.com/JhonAQ/te-toca-app",
+    demo: "https://www.canva.com/design/DAGstnQBFqA/CDYdqHKvCmFpDll9_FRSiA/view",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
+  },
+  {
+    title: "IHC HeadControl",
+    description: "Sistema de accesibilidad que permite controlar el cursor del mouse mediante gestos faciales y movimientos de cabeza. Diseñado para personas con discapacidad motriz, inspirado en tecnologías asistivas como ACAT.",
+    tech: ["Python", "OpenCV", "Computer Vision", "HCI"],
+    github: "https://github.com/JhonAQ/IHC-HeadControl",
+    demo: "https://github.com/JhonAQ/IHC-HeadControl",
     image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/paz.gif"
   },
   {
-    title: "Competitive Programming",
-    description: "Repositorio personal dedicado a la resolución de problemas de programación competitiva, optimización de algoritmos y estructuras de datos.",
-    tech: ["C++"],
-    github: "https://github.com/JhonAQ/competitive-programming",
-    demo: "https://github.com/JhonAQ/competitive-programming",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/episunsa.png"
+    title: "CoderDojo Platform",
+    description: "Plataforma educativa gamificada para la enseñanza de programación a escolares (IEEE Student Chapter). Incluye módulos interactivos y juegos de typing. Foco especial en UX/UI amigable para niños.",
+    tech: ["React", "UI/UX", "Gamification", "Frontend"],
+    github: "https://github.com/JhonAQ/coder-dojo-front",
+    demo: "https://coder-dojo-front.vercel.app",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+  },
+  {
+    title: "Himnario Adonai",
+    description: "Aplicación web PWA. Facilita el acceso offline a himnos cristianos con búsqueda instantánea y base de datos local optimizada. Migrada a Next.js para máximo rendimiento en dispositivos móviles.",
+    tech: ["Next.js", "SQL.js", "PWA", "Tailwind"],
+    github: "https://github.com/JhonAQ/himnario-adonai",
+    demo: "https://himnario-adonai.vercel.app",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
+  },
+  {
+    title: "Proyecto Ayni",
+    description: "Plataforma de economía colaborativa para comunidades locales. Permite el intercambio de servicios y ayuda mutua. Desarrollado durante la Hackaton InnovaSur 2025.",
+    tech: ["HTML/CSS", "JavaScript", "Social Impact"],
+    github: "https://github.com/JhonAQ/InnovaSur",
+    demo: "https://www.canva.com/design/DAG1ZrHHCEA/tIcwRlLDbcWFEEUqotDYxQ/view",
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
   }
 ];
