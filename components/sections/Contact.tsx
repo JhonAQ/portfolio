@@ -49,7 +49,9 @@ const Contact: React.FC = () => {
       } else {
         // Manejar errores si es necesario
         setIsSubmitting(false);
-        alert("Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.");
+        alert(
+          "Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.",
+        );
       }
     } catch (error) {
       setIsSubmitting(false);
