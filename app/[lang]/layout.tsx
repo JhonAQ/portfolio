@@ -28,7 +28,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const locale = (lang as Locale) ?? i18n.defaultLocale;
-  const currentLocale = i18n.locales.includes(locale) ? locale : i18n.defaultLocale;
+  const currentLocale = i18n.locales.includes(locale)
+    ? locale
+    : i18n.defaultLocale;
   const canonicalPath = `/${currentLocale}`;
 
   return {
@@ -83,7 +85,9 @@ export default async function LocaleLayout({
 }) {
   const { lang } = await params;
   const locale = (lang as Locale) ?? i18n.defaultLocale;
-  const currentLocale = i18n.locales.includes(locale) ? locale : i18n.defaultLocale;
+  const currentLocale = i18n.locales.includes(locale)
+    ? locale
+    : i18n.defaultLocale;
   const dictionary = await getDictionary(currentLocale);
 
   const jsonLd = {
@@ -94,7 +98,9 @@ export default async function LocaleLayout({
         name: "Jhonatan Arias Quispe",
         url: `${siteUrl}/${currentLocale}`,
         jobTitle:
-          currentLocale === "es" ? "Desarrollador de software" : "Software developer",
+          currentLocale === "es"
+            ? "Desarrollador de software"
+            : "Software developer",
         description: descriptions[currentLocale],
         image: `${siteUrl}/og-image.svg`,
         email: "mailto:jariasq@unsa.edu.pe",
