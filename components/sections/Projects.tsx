@@ -139,104 +139,104 @@ const Projects: React.FC = () => {
 
             <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {otherProjects.map((project, index) => (
-              <div
-                key={index}
-                className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
-              >
                 <div
-                  className={`w-full aspect-video relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                  key={index}
+                  className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
                 >
                   <div
-                    className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
-                  ></div>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src =
-                        "https://via.placeholder.com/800x450/0A0F1C/4F46E5?text=Proyecto";
-                    }}
-                  />
+                    className={`w-full aspect-video relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                  >
+                    <div
+                      className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
+                    ></div>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src =
+                          "https://via.placeholder.com/800x450/0A0F1C/4F46E5?text=Proyecto";
+                      }}
+                    />
 
-                  {/* Overlay con Botones al Hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex z-20">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
-                      >
-                        <Github
-                          size={28}
-                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                        />
-                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-                          Repo
+                    {/* Overlay con Botones al Hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex z-20">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
+                        >
+                          <Github
+                            size={28}
+                            className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                          />
+                          <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                            Repo
+                          </span>
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
+                        >
+                          <ExternalLink
+                            size={28}
+                            className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                          />
+                          <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                            Web
+                          </span>
+                        </a>
+                      )}
+                      {project.pitchDeck && (
+                        <a
+                          href={project.pitchDeck}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white"
+                        >
+                          <FileText
+                            size={28}
+                            className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                          />
+                          <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                            Pitch
+                          </span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h4
+                      className={`text-lg font-bold mb-2 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
+                    >
+                      {project.title}
+                    </h4>
+                    <p
+                      className={`text-xs leading-relaxed mb-4 flex-grow transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
+                    >
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className={`text-[10px] font-mono px-2 py-0.5 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
+                        >
+                          {tech}
                         </span>
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white border-r border-white/10 last:border-0"
-                      >
-                        <ExternalLink
-                          size={28}
-                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                        />
-                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-                          Web
-                        </span>
-                      </a>
-                    )}
-                    {project.pitchDeck && (
-                      <a
-                        href={project.pitchDeck}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 h-full flex flex-col items-center justify-center gap-2 backdrop-blur-sm transition-all duration-300 group/btn bg-black/10 hover:bg-black/30 text-white"
-                      >
-                        <FileText
-                          size={28}
-                          className="transition-transform group-hover/btn:scale-110 group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                        />
-                        <span className="font-bold text-xs uppercase tracking-wider group-hover/btn:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-                          Pitch
-                        </span>
-                      </a>
-                    )}
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                <div className="p-5 flex flex-col flex-grow">
-                  <h4
-                    className={`text-lg font-bold mb-2 transition-colors ${isDarkMode ? "text-white group-hover:text-indigo-300" : "text-slate-900 group-hover:text-indigo-600"}`}
-                  >
-                    {project.title}
-                  </h4>
-                  <p
-                    className={`text-xs leading-relaxed mb-4 flex-grow transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
-                  >
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className={`text-[10px] font-mono px-2 py-0.5 rounded-full whitespace-nowrap border transition-colors ${isDarkMode ? "bg-white/10 text-slate-200 border-white/10" : "bg-slate-800 text-white border-slate-800"}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
               ))}
             </div>
           </div>

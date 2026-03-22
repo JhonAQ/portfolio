@@ -32,8 +32,14 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
   }, []);
 
   const cvOptions = [
-    { label: dictionary.downloadCV.options.es, file: "/pdf/Jhonatan-Arias-CV.pdf" },
-    { label: dictionary.downloadCV.options.en, file: "/pdf/Resume-Jhonatan-Arias.pdf" },
+    {
+      label: dictionary.downloadCV.options.es,
+      file: "/pdf/Jhonatan-Arias-CV.pdf",
+    },
+    {
+      label: dictionary.downloadCV.options.en,
+      file: "/pdf/Resume-Jhonatan-Arias.pdf",
+    },
   ];
 
   // Base styles depending on where it's used
@@ -58,7 +64,11 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
         className={`${buttonClasses} ${className || ""}`}
       >
         {styleType === "navbar" && <Download size={16} />}
-        <span>{styleType === "hero" ? dictionary.downloadCV.heroLabel : dictionary.downloadCV.navbarLabel}</span>
+        <span>
+          {styleType === "hero"
+            ? dictionary.downloadCV.heroLabel
+            : dictionary.downloadCV.navbarLabel}
+        </span>
         {styleType === "hero" && <Download size={18} />}
         {styleType === "navbar" && (
           <ChevronDown

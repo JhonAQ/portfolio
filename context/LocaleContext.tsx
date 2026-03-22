@@ -3,7 +3,9 @@
 import { createContext, useContext, useMemo } from "react";
 import type { Locale } from "@/i18n-config";
 
-type Dictionary = Awaited<ReturnType<typeof import("@/lib/dictionary")["getDictionary"]>>;
+type Dictionary = Awaited<
+  ReturnType<(typeof import("@/lib/dictionary"))["getDictionary"]>
+>;
 
 interface LocaleContextValue {
   locale: Locale;
@@ -18,9 +20,15 @@ interface LocaleProviderProps {
   children: React.ReactNode;
 }
 
-export const LocaleProvider = ({ locale, dictionary, children }: LocaleProviderProps) => {
+export const LocaleProvider = ({
+  locale,
+  dictionary,
+  children,
+}: LocaleProviderProps) => {
   const value = useMemo(() => ({ locale, dictionary }), [locale, dictionary]);
-  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
+  return (
+    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
+  );
 };
 
 export const useLocale = () => {

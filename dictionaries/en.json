@@ -11,11 +11,7 @@
   "hero": {
     "greeting": "Hi, I'm",
     "rolePrefix": "I'm",
-    "roles": [
-      "Software Developer.",
-      "CS Student.",
-      "Problem Solver."
-    ],
+    "roles": ["Software Developer.", "CS Student.", "Problem Solver."],
     "chips": {
       "experience": "2+ years of experience",
       "availability": "Available for projects",

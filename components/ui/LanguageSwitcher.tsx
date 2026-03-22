@@ -28,7 +28,10 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="flex items-center gap-2" aria-label={dictionary.localeSwitcher.label}>
+    <div
+      className="flex items-center gap-2"
+      aria-label={dictionary.localeSwitcher.label}
+    >
       {i18n.locales.map((lang) => (
         <button
           key={lang}
@@ -40,7 +43,9 @@ const LanguageSwitcher = () => {
           }`}
           aria-pressed={locale === lang}
         >
-          {lang === "es" ? dictionary.localeSwitcher.es : dictionary.localeSwitcher.en}
+          {lang === "es"
+            ? dictionary.localeSwitcher.es
+            : dictionary.localeSwitcher.en}
         </button>
       ))}
     </div>

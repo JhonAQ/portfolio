@@ -152,7 +152,8 @@ const Footer: React.FC<FooterProps> = ({ sectionIds }) => {
           </p>
           <p className="text-slate-500 text-sm flex items-center gap-1.5">
             {dictionary.footer.madeWith}{" "}
-            <span className="text-indigo-500 font-medium">React</span> {dictionary.footer.andLogic}
+            <span className="text-indigo-500 font-medium">React</span>{" "}
+            {dictionary.footer.andLogic}
           </p>
         </div>
       </div>

@@ -33,7 +33,8 @@ const Hero: React.FC = () => {
           <h1
             className={`text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-2 transition-all duration-300 ${isDarkMode ? "text-white hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" : "text-slate-900"}`}
           >
-            {dictionary.hero.greeting} Jhonatan<span className="text-indigo-500">.</span>
+            {dictionary.hero.greeting} Jhonatan
+            <span className="text-indigo-500">.</span>
           </h1>
 
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-indigo-500 md:text-indigo-400 mb-6 min-h-[50px] md:min-h-[60px] block">

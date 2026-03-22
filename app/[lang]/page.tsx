@@ -30,7 +30,9 @@ export default function Home() {
   return (
     <div
       className={`min-h-screen font-sans selection:bg-indigo-500/30 relative z-0 overflow-x-hidden transition-colors duration-500 cursor-default sm:cursor-none ${
-        isDarkMode ? "bg-[#0A0F1C] text-slate-300" : "bg-slate-50 text-slate-600"
+        isDarkMode
+          ? "bg-[#0A0F1C] text-slate-300"
+          : "bg-slate-50 text-slate-600"
       }`}
     >
       <Analytics />

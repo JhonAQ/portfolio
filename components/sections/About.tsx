@@ -24,7 +24,8 @@ const About: React.FC = () => {
               <h2
                 className={`text-4xl md:text-5xl font-bold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
               >
-                {dictionary.about.title}<span className="text-indigo-500">.</span>
+                {dictionary.about.title}
+                <span className="text-indigo-500">.</span>
               </h2>
             </div>
 

@@ -79,7 +79,10 @@ const Contact: React.FC = () => {
             <h2
               className={`text-4xl md:text-5xl font-bold mb-6 transition-colors reveal delay-100 ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
-              {dictionary.contact.title} <span className="text-indigo-500">{dictionary.contact.titleAccent}</span>
+              {dictionary.contact.title}{" "}
+              <span className="text-indigo-500">
+                {dictionary.contact.titleAccent}
+              </span>
             </h2>
             <p
               className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors reveal delay-200 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
