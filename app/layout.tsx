@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 // import { Montserrat } from "next/font/google";
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-MFWSYSGY4D" />
       </body>
     </html>
   );

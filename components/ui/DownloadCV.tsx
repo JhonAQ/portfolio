@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Download, ChevronDown } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface DownloadCVProps {
   className?: string;
@@ -92,7 +93,14 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
             className={`px-4 py-2.5 text-sm font-medium transition-colors hover:bg-indigo-500 hover:text-white flex items-center justify-between group ${
               isDarkMode ? "text-slate-300" : "text-slate-700"
             }`}
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              sendGAEvent("event", "file_download", {
+                file_name: option.label,
+                file_extension: "pdf",
+                link_location: styleType,
+              });
+            }}
           >
             {option.label}
             <Download

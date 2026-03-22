@@ -4,6 +4,7 @@ import React from "react";
 import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
 import { navSections } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const Footer: React.FC = () => {
   const { isDarkMode } = useTheme();
@@ -48,6 +49,9 @@ const Footer: React.FC = () => {
                 href="https://github.com/JhonAQ"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  sendGAEvent("event", "social_click", { platform: "Github" })
+                }
                 className={`hover:scale-110 transition-all p-2.5 rounded-full ${isDarkMode ? "text-slate-400 hover:text-white bg-white/5 hover:bg-indigo-500/20 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]" : "text-slate-600 hover:text-indigo-600 bg-white border border-slate-200 hover:bg-indigo-50 hover:border-indigo-200 shadow-sm"}`}
               >
                 <Github size={18} />
@@ -56,12 +60,18 @@ const Footer: React.FC = () => {
                 href="https://linkedin.com/in/jhon-aq"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  sendGAEvent("event", "social_click", { platform: "LinkedIn" })
+                }
                 className={`hover:scale-110 transition-all p-2.5 rounded-full ${isDarkMode ? "text-slate-400 hover:text-white bg-white/5 hover:bg-indigo-500/20 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]" : "text-slate-600 hover:text-indigo-600 bg-white border border-slate-200 hover:bg-indigo-50 hover:border-indigo-200 shadow-sm"}`}
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="mailto:jariasq@unsa.edu.pe"
+                onClick={() =>
+                  sendGAEvent("event", "contact_click", { method: "Email" })
+                }
                 className={`hover:scale-110 transition-all p-2.5 rounded-full ${isDarkMode ? "text-slate-400 hover:text-white bg-white/5 hover:bg-indigo-500/20 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]" : "text-slate-600 hover:text-indigo-600 bg-white border border-slate-200 hover:bg-indigo-50 hover:border-indigo-200 shadow-sm"}`}
               >
                 <Mail size={18} />

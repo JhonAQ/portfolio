@@ -13,6 +13,7 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 import { roles } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
 import DownloadCV from "@/components/ui/DownloadCV";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const Hero: React.FC = () => {
   const { isDarkMode } = useTheme();
@@ -75,7 +76,10 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <button
+            <button() => {
+                scrollToContact();
+                sendGAEvent("event", "contact_click", { method: "Hero Button" });
+              }
               onClick={scrollToContact}
               className={`px-7 py-3 rounded-md font-bold transition-all flex items-center gap-2 hover:-translate-y-1 uppercase text-[13px] tracking-wide ${isDarkMode ? "bg-indigo-500 text-white hover:bg-indigo-600 shadow-[0_0_20px_rgba(99,102,241,0.2)]" : "bg-indigo-600 text-white hover:bg-indigo-700 shadow-[0_4px_14px_rgba(99,102,241,0.3)]"}`}
             >
