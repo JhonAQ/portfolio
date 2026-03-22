@@ -18,25 +18,43 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [messageText, setMessageText] = useState("");
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simula envío y luego transición al chat
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
 
-      // Reiniciar después de 5 segundos para que puedan leer los mensajes
-      setTimeout(() => {
-        setIsSubmitted(false);
+    try {
+      const response = await fetch("https://formspree.io/f/mnjgyonv", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+
+        // Reiniciar después de 5 segundos para que puedan leer los mensajes
         setTimeout(() => {
-          setMessageText("");
-          const form = e.target as HTMLFormElement;
-          form.reset();
-        }, 500); // Esperar que acabe la animación de desvanecimiento
-      }, 5000);
-    }, 1500);
+          setIsSubmitted(false);
+          setTimeout(() => {
+            setMessageText("");
+            form.reset();
+          }, 500); // Esperar que acabe la animación de desvanecimiento
+        }, 5000);
+      } else {
+        // Manejar errores si es necesario
+        setIsSubmitting(false);
+        alert("Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.");
+      }
+    } catch (error) {
+      setIsSubmitting(false);
+      alert("Hubo un error de conexión.");
+    }
   };
 
   return (
@@ -243,6 +261,7 @@ const Contact: React.FC = () => {
                       <input
                         type="text"
                         id="name"
+                        name="name"
                         required
                         className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
                           isDarkMode
@@ -263,6 +282,7 @@ const Contact: React.FC = () => {
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         required
                         className={`w-full px-4 py-3 rounded-xl outline-none transition-all ${
                           isDarkMode
@@ -282,6 +302,7 @@ const Contact: React.FC = () => {
                       Cuéntame sobre tu proyecto
                     </label>
                     <textarea
+                      name="message"
                       id="message"
                       rows={4}
                       required
