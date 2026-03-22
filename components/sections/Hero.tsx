@@ -79,7 +79,9 @@ const Hero: React.FC = () => {
             <button
               onClick={() => {
                 scrollToContact();
-                sendGAEvent("event", "contact_click", { method: "Hero Button" });
+                sendGAEvent("event", "contact_click", {
+                  method: "Hero Button",
+                });
               }}
               className={`px-7 py-3 rounded-md font-bold transition-all flex items-center gap-2 hover:-translate-y-1 uppercase text-[13px] tracking-wide ${isDarkMode ? "bg-indigo-500 text-white hover:bg-indigo-600 shadow-[0_0_20px_rgba(99,102,241,0.2)]" : "bg-indigo-600 text-white hover:bg-indigo-700 shadow-[0_4px_14px_rgba(99,102,241,0.3)]"}`}
             >
