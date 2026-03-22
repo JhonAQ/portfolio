@@ -30,7 +30,12 @@ const Projects: React.FC = () => {
               className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center group`}
             >
               <div className="w-full lg:w-1/2 relative reveal">
-                <Mockup3D image={project.image} video={project.video} />
+                <Mockup3D
+                  image={project.image}
+                  video={project.video}
+                  fit={project.imageFit}
+                  background={project.imageBg}
+                />
               </div>
 
               <div

@@ -7,6 +7,8 @@ export interface Project {
   pitchDeck?: string;
   image: string;
   video?: string;
+  imageFit?: "cover" | "contain";
+  imageBg?: string;
   isDeveloping?: boolean;
 }
 
@@ -16,6 +18,8 @@ export const projects: Project[] = [
     description: "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
     tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
     image: "/images/trabajos/ingresa-pe.png",
+    imageFit: "contain",
+    imageBg: "white",
     isDeveloping: true
   },
   {
