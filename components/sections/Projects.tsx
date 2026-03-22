@@ -139,7 +139,7 @@ const Projects: React.FC = () => {
                 className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
               >
                 <div
-                  className={`w-full h-40 relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
+                  className={`w-full aspect-video relative overflow-hidden border-b transition-colors ${isDarkMode ? "border-white/5" : "border-slate-200"}`}
                 >
                   <div
                     className={`absolute inset-0 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none ${isDarkMode ? "bg-indigo-900/40" : "bg-indigo-200/40"}`}
