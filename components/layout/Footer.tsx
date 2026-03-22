@@ -2,12 +2,17 @@
 
 import React from "react";
 import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
-import { navSections } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useLocale } from "@/context/LocaleContext";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  sectionIds: string[];
+}
+
+const Footer: React.FC<FooterProps> = ({ sectionIds }) => {
   const { isDarkMode } = useTheme();
+  const { dictionary } = useLocale();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -84,17 +89,17 @@ const Footer: React.FC = () => {
               <h4
                 className={`font-bold mb-4 uppercase text-xs tracking-widest transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
               >
-                Navegación
+                {dictionary.footer.navigation}
               </h4>
               <ul className="space-y-3">
-                {navSections.map((item) => (
-                  <li key={item.id}>
+                {sectionIds.map((id) => (
+                  <li key={id}>
                     <button
-                      onClick={() => scrollTo(item.id)}
+                      onClick={() => scrollTo(id)}
                       className={`text-sm font-medium transition-colors capitalize flex items-center gap-2 group ${isDarkMode ? "text-slate-400 hover:text-indigo-400" : "text-slate-600 hover:text-indigo-600"}`}
                     >
                       <span className="w-0 h-px bg-indigo-400 transition-all group-hover:w-3"></span>
-                      {item.label}
+                      {dictionary.nav[id as keyof typeof dictionary.nav]}
                     </button>
                   </li>
                 ))}
@@ -109,7 +114,7 @@ const Footer: React.FC = () => {
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
-                Status Actual
+                {dictionary.footer.status}
               </h4>
               <div
                 className={`flex items-center gap-2 text-sm justify-start md:justify-end transition-colors ${
@@ -120,7 +125,7 @@ const Footer: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
-                Disponible para contratación
+                {dictionary.footer.available}
               </div>
             </div>
 
@@ -146,8 +151,8 @@ const Footer: React.FC = () => {
             derechos reservados.
           </p>
           <p className="text-slate-500 text-sm flex items-center gap-1.5">
-            Hecho con <span className="text-indigo-500 font-medium">React</span>{" "}
-            y mucha lógica.
+            {dictionary.footer.madeWith}{" "}
+            <span className="text-indigo-500 font-medium">React</span> {dictionary.footer.andLogic}
           </p>
         </div>
       </div>

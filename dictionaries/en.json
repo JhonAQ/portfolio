@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Journey",
+    "projects": "Projects",
+    "contact": "Contact",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "rolePrefix": "I'm",
+    "roles": [
+      "Software Developer.",
+      "CS Student.",
+      "Problem Solver."
+    ],
+    "chips": {
+      "experience": "2+ years of experience",
+      "availability": "Available for projects",
+      "global": "Working globally"
+    },
+    "description": "I build web apps, robust systems, and efficient digital tools with a focus on reliability, performance, and clean code.",
+    "ctaContact": "Get in touch",
+    "ctaCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm Jhonatan, a software developer and Systems Engineering student at the Universidad Nacional de San Agustín (UNSA) in Arequipa. I specialize in turning complex ideas into intuitive, fast, and scalable digital experiences.",
+    "body": "My technical focus is complemented by a strong interest in UI/UX design, ensuring every application not only has impeccable code but also feels great to use.",
+    "arsenal": "My Tech Arsenal"
+  },
+  "education": {
+    "title": "Journey",
+    "subtitle": "My professional path, academic achievements, and collaborative experience."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "other": "Other Interesting Projects",
+    "badgeDeveloping": "In Development",
+    "ctaGithub": "Source Code",
+    "ctaDemo": "Live Site",
+    "ctaPitch": "Pitch Deck"
+  },
+  "contact": {
+    "eyebrow": "What's next?",
+    "title": "Let's Work",
+    "titleAccent": "Together.",
+    "body": "I'm currently open to new roles and freelance projects. Whether you have a question or just want to say hi, I'll do my best to reply soon.",
+    "emailLabel": "Email me",
+    "githubLabel": "View Code",
+    "linkedinLabel": "Connect",
+    "location": "Arequipa, Peru — Remote available",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "thanks": "Thanks for reaching out. I'll get back to you soon.",
+      "placeholderMessage": "Tell me about your project, ideas, or question..."
+    }
+  },
+  "downloadCV": {
+    "heroLabel": "Download CV",
+    "navbarLabel": "CV",
+    "select": "Select Language",
+    "options": {
+      "es": "Spanish (CV)",
+      "en": "English (Resume)"
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "status": "Current Status",
+    "available": "Available for hire",
+    "madeWith": "Built with",
+    "andLogic": "and plenty of logic."
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "es": "Spanish",
+    "en": "English"
+  }
+}

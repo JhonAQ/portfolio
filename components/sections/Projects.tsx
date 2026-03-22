@@ -5,9 +5,12 @@ import { Github, ExternalLink, FileText } from "lucide-react";
 import Mockup3D from "@/components/features/Mockup3D";
 import { projects } from "@/data/projects";
 import { useTheme } from "@/context/ThemeContext";
+import { useLocale } from "@/context/LocaleContext";
 
 const Projects: React.FC = () => {
   const { isDarkMode } = useTheme();
+  const { locale, dictionary } = useLocale();
+  const otherProjects = projects[locale]?.slice(3) ?? [];
 
   return (
     <section
@@ -19,12 +22,13 @@ const Projects: React.FC = () => {
           <h2
             className={`text-4xl md:text-5xl font-bold text-center md:text-left transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
           >
-            Proyectos Destacados<span className="text-indigo-500">.</span>
+            {dictionary.projects.other}
+            <span className="text-indigo-500">.</span>
           </h2>
         </div>
 
         <div className="flex flex-col gap-32 md:gap-40">
-          {projects.slice(0, 3).map((project, index) => (
+          {projects[locale].slice(0, 3).map((project, index) => (
             <div
               key={index}
               className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center group`}
@@ -47,7 +51,7 @@ const Projects: React.FC = () => {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                     </span>
-                    En Desarrollo
+                    {dictionary.projects.badgeDeveloping}
                   </span>
                 )}
                 <h3
@@ -87,7 +91,7 @@ const Projects: React.FC = () => {
                           : "border-slate-800 text-slate-800 hover:bg-slate-100"
                       }`}
                     >
-                      Código Fuente <Github size={18} />
+                      {dictionary.projects.ctaGithub} <Github size={18} />
                     </a>
                   )}
                   {project.demo && (
@@ -101,7 +105,7 @@ const Projects: React.FC = () => {
                           : "bg-slate-800 text-white hover:bg-slate-900"
                       }`}
                     >
-                      Visitar Web <ExternalLink size={18} />
+                      {dictionary.projects.ctaDemo} <ExternalLink size={18} />
                     </a>
                   )}
                   {project.pitchDeck && (
@@ -115,7 +119,7 @@ const Projects: React.FC = () => {
                           : "border-slate-800 text-slate-800 hover:bg-slate-100"
                       }`}
                     >
-                      Pitch Deck <FileText size={18} />
+                      {dictionary.projects.ctaPitch} <FileText size={18} />
                     </a>
                   )}
                 </div>
@@ -125,15 +129,16 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Más Proyectos */}
-        <div className="mt-40 reveal">
-          <h3
-            className={`text-3xl font-bold text-center mb-16 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
-          >
-            Otros Proyectos Interesantes
-          </h3>
+        {otherProjects.length > 0 && (
+          <div className="mt-40 reveal">
+            <h3
+              className={`text-3xl font-bold text-center mb-16 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
+            >
+              {dictionary.projects.other}
+            </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.slice(3).map((project, index) => (
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+              {otherProjects.map((project, index) => (
               <div
                 key={index}
                 className={`reveal delay-${((index % 3) + 1) * 100} backdrop-blur-sm border rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 ${isDarkMode ? "bg-[#111827]/60 border-white/5 hover:border-indigo-500/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]" : "bg-white/60 border-slate-200 hover:border-indigo-300 hover:shadow-xl"}`}
@@ -232,9 +237,10 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
               </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

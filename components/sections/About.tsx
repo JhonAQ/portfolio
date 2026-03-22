@@ -4,9 +4,11 @@ import React from "react";
 import { Terminal } from "lucide-react";
 import { groupedSkills, allSkills } from "@/data/skills";
 import { useTheme } from "@/context/ThemeContext";
+import { useLocale } from "@/context/LocaleContext";
 
 const About: React.FC = () => {
   const { isDarkMode } = useTheme();
+  const { dictionary } = useLocale();
 
   return (
     <section
@@ -22,7 +24,7 @@ const About: React.FC = () => {
               <h2
                 className={`text-4xl md:text-5xl font-bold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
               >
-                Sobre Mí<span className="text-indigo-500">.</span>
+                {dictionary.about.title}<span className="text-indigo-500">.</span>
               </h2>
             </div>
 
@@ -33,16 +35,7 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-              Soy Jhonatan, un desarrollador de software y estudiante de
-              Ingeniería de Sistemas en la{" "}
-              <strong
-                className={`transition-colors ${isDarkMode ? "text-indigo-300 hover:text-indigo-200" : "text-indigo-600 hover:text-indigo-500"}`}
-              >
-                Universidad Nacional de San Agustín (UNSA)
-              </strong>
-              , radicado en Arequipa. Me especializo en transformar ideas
-              complejas en experiencias digitales intuitivas, rápidas y
-              escalables.
+              {dictionary.about.intro}
             </p>
             <p
               className={
@@ -51,9 +44,7 @@ const About: React.FC = () => {
                   : "hover:text-slate-900 transition-colors duration-300"
               }
             >
-              Mi enfoque técnico se complementa con un profundo interés en el
-              diseño UI/UX, asegurando que cada aplicación no solo tenga un
-              código impecable, sino que se sienta increíble al usarla.
+              {dictionary.about.body}
             </p>
           </div>
 
@@ -64,7 +55,7 @@ const About: React.FC = () => {
               className={`text-2xl font-bold mb-8 flex items-center md:items-start md:pt-4 gap-3 transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
               <Terminal className="text-indigo-500 mt-1 md:mt-0" size={28} />
-              <span className="flex-1">Mi Arsenal Tecnológico</span>
+              <span className="flex-1">{dictionary.about.arsenal}</span>
             </h3>
 
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8">

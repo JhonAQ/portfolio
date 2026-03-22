@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Download, ChevronDown } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useLocale } from "@/context/LocaleContext";
 
 interface DownloadCVProps {
   className?: string;
@@ -12,6 +13,7 @@ interface DownloadCVProps {
 
 const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
   const { isDarkMode } = useTheme();
+  const { dictionary } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -30,8 +32,8 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
   }, []);
 
   const cvOptions = [
-    { label: "Español (CV)", file: "/pdf/Jhonatan-Arias-CV.pdf" },
-    { label: "English (Resume)", file: "/pdf/Resume-Jhonatan-Arias.pdf" },
+    { label: dictionary.downloadCV.options.es, file: "/pdf/Jhonatan-Arias-CV.pdf" },
+    { label: dictionary.downloadCV.options.en, file: "/pdf/Resume-Jhonatan-Arias.pdf" },
   ];
 
   // Base styles depending on where it's used
@@ -56,7 +58,7 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
         className={`${buttonClasses} ${className || ""}`}
       >
         {styleType === "navbar" && <Download size={16} />}
-        <span>{styleType === "hero" ? "Descargar CV" : "CV"}</span>
+        <span>{styleType === "hero" ? dictionary.downloadCV.heroLabel : dictionary.downloadCV.navbarLabel}</span>
         {styleType === "hero" && <Download size={18} />}
         {styleType === "navbar" && (
           <ChevronDown
@@ -82,7 +84,7 @@ const DownloadCV: React.FC<DownloadCVProps> = ({ className, styleType }) => {
             isDarkMode ? "text-slate-500" : "text-slate-400"
           }`}
         >
-          Seleccionar Idioma
+          {dictionary.downloadCV.select}
         </span>
         {cvOptions.map((option) => (
           <a

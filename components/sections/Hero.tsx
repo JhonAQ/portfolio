@@ -1,23 +1,17 @@
 "use client";
 
 import React from "react";
-import {
-  ArrowRight,
-  Download,
-  Globe,
-  Database,
-  Code2,
-  Cpu,
-} from "lucide-react";
+import { ArrowRight, Globe, Database, Code2, Cpu } from "lucide-react";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import { roles } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
 import DownloadCV from "@/components/ui/DownloadCV";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useLocale } from "@/context/LocaleContext";
 
 const Hero: React.FC = () => {
   const { isDarkMode } = useTheme();
-  const currentText = useTypewriter(roles);
+  const { dictionary } = useLocale();
+  const currentText = useTypewriter(dictionary.hero.roles);
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -39,11 +33,13 @@ const Hero: React.FC = () => {
           <h1
             className={`text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-2 transition-all duration-300 ${isDarkMode ? "text-white hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" : "text-slate-900"}`}
           >
-            Hola, soy Jhonatan<span className="text-indigo-500">.</span>
+            {dictionary.hero.greeting} Jhonatan<span className="text-indigo-500">.</span>
           </h1>
 
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-indigo-500 md:text-indigo-400 mb-6 min-h-[50px] md:min-h-[60px] block">
-            <span>Soy {currentText}</span>
+            <span>
+              {dictionary.hero.rolePrefix} {currentText}
+            </span>
             <span
               className={`inline-block w-[3px] h-[30px] md:h-[45px] bg-indigo-500 ml-1 cursor-blink align-text-bottom ${isDarkMode ? "shadow-[0_0_8px_rgba(99,102,241,0.8)]" : ""}`}
             ></span>
@@ -53,26 +49,24 @@ const Hero: React.FC = () => {
             <span
               className={`px-4 py-1.5 rounded-full border text-sm font-medium cursor-default transition-colors ${isDarkMode ? "border-indigo-500/30 bg-indigo-500/10 text-indigo-200" : "border-indigo-200 bg-indigo-50 text-indigo-700"}`}
             >
-              2+ años de experiencia
+              {dictionary.hero.chips.experience}
             </span>
             <span
               className={`px-4 py-1.5 rounded-full border text-sm font-medium cursor-default transition-colors ${isDarkMode ? "border-indigo-500/30 bg-indigo-500/10 text-indigo-200" : "border-indigo-200 bg-indigo-50 text-indigo-700"}`}
             >
-              Disponible para proyectos
+              {dictionary.hero.chips.availability}
             </span>
             <span
               className={`px-4 py-1.5 rounded-full border text-sm font-medium cursor-default transition-colors ${isDarkMode ? "border-indigo-500/30 bg-indigo-500/10 text-indigo-200" : "border-indigo-200 bg-indigo-50 text-indigo-700"}`}
             >
-              Trabajando globalmente
+              {dictionary.hero.chips.global}
             </span>
           </div>
 
           <p
             className={`text-lg mb-10 max-w-xl leading-relaxed transition-colors duration-300 ${isDarkMode ? "text-slate-400 hover:text-slate-200" : "text-slate-600 hover:text-slate-900"}`}
           >
-            Construyo aplicaciones web, sistemas robustos y herramientas
-            digitales eficientes, con un enfoque en la confiabilidad, el
-            rendimiento y escribir código limpio.
+            {dictionary.hero.description}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -85,7 +79,7 @@ const Hero: React.FC = () => {
               }}
               className={`px-7 py-3 rounded-md font-bold transition-all flex items-center gap-2 hover:-translate-y-1 uppercase text-[13px] tracking-wide ${isDarkMode ? "bg-indigo-500 text-white hover:bg-indigo-600 shadow-[0_0_20px_rgba(99,102,241,0.2)]" : "bg-indigo-600 text-white hover:bg-indigo-700 shadow-[0_4px_14px_rgba(99,102,241,0.3)]"}`}
             >
-              Ponerse en contacto <ArrowRight size={18} />
+              {dictionary.hero.ctaContact} <ArrowRight size={18} />
             </button>
 
             <DownloadCV styleType="hero" />

@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "education": "Trayectoria",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "theme": "Tema",
+    "language": "Idioma"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "rolePrefix": "Soy",
+    "roles": [
+      "Desarrollador de Software.",
+      "Estudiante de CS.",
+      "Solucionador de Problemas."
+    ],
+    "chips": {
+      "experience": "2+ años de experiencia",
+      "availability": "Disponible para proyectos",
+      "global": "Trabajando globalmente"
+    },
+    "description": "Construyo aplicaciones web, sistemas robustos y herramientas digitales eficientes, con un enfoque en la confiabilidad, el rendimiento y escribir código limpio.",
+    "ctaContact": "Ponerse en contacto",
+    "ctaCV": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Soy Jhonatan, un desarrollador de software y estudiante de Ingeniería de Sistemas en la Universidad Nacional de San Agustín (UNSA), radicado en Arequipa. Me especializo en transformar ideas complejas en experiencias digitales intuitivas, rápidas y escalables.",
+    "body": "Mi enfoque técnico se complementa con un profundo interés en el diseño UI/UX, asegurando que cada aplicación no solo tenga un código impecable, sino que se sienta increíble al usarla.",
+    "arsenal": "Mi Arsenal Tecnológico"
+  },
+  "education": {
+    "title": "Trayectoria",
+    "subtitle": "Mi camino profesional, logros académicos y experiencia colaborativa."
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "other": "Otros Proyectos Interesantes",
+    "badgeDeveloping": "En Desarrollo",
+    "ctaGithub": "Código Fuente",
+    "ctaDemo": "Visitar Web",
+    "ctaPitch": "Pitch Deck"
+  },
+  "contact": {
+    "eyebrow": "¿Qué sigue?",
+    "title": "Trabajemos",
+    "titleAccent": "Juntos.",
+    "body": "Actualmente estoy abierto a nuevas oportunidades de trabajo y proyectos freelance. Ya sea que tengas una pregunta o simplemente quieras saludar, haré todo lo posible para responderte pronto.",
+    "emailLabel": "Contáctame",
+    "githubLabel": "Ver Código",
+    "linkedinLabel": "Conectar",
+    "location": "Arequipa, Perú - Disponible Remoto",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "thanks": "Gracias por contactarme. Te responderé pronto.",
+      "placeholderMessage": "Cuéntame sobre tu proyecto, ideas o pregunta..."
+    }
+  },
+  "downloadCV": {
+    "heroLabel": "Descargar CV",
+    "navbarLabel": "CV",
+    "select": "Seleccionar Idioma",
+    "options": {
+      "es": "Español (CV)",
+      "en": "English (Resume)"
+    }
+  },
+  "footer": {
+    "navigation": "Navegación",
+    "status": "Status Actual",
+    "available": "Disponible para contratación",
+    "madeWith": "Hecho con",
+    "andLogic": "y mucha lógica."
+  },
+  "localeSwitcher": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "Inglés"
+  }
+}

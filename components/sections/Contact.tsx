@@ -11,9 +11,11 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
+import { useLocale } from "@/context/LocaleContext";
 
 const Contact: React.FC = () => {
   const { isDarkMode } = useTheme();
+  const { dictionary } = useLocale();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [messageText, setMessageText] = useState("");
@@ -72,19 +74,17 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           <div>
             <h4 className="text-indigo-500 md:text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3 reveal">
-              ¿Qué sigue?
+              {dictionary.contact.eyebrow}
             </h4>
             <h2
               className={`text-4xl md:text-5xl font-bold mb-6 transition-colors reveal delay-100 ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
-              Trabajemos <span className="text-indigo-500">Juntos.</span>
+              {dictionary.contact.title} <span className="text-indigo-500">{dictionary.contact.titleAccent}</span>
             </h2>
             <p
               className={`text-lg mb-10 max-w-lg leading-relaxed transition-colors reveal delay-200 ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
             >
-              Actualmente estoy abierto a nuevas oportunidades de trabajo y
-              proyectos freelance. Ya sea que tengas una pregunta o simplemente
-              quieras saludar, haré todo lo posible para responderte pronto.
+              {dictionary.contact.body}
             </p>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                   <span
                     className={`block text-xs font-bold tracking-widest uppercase mb-2 ${isDarkMode ? "text-indigo-400" : "text-indigo-600"}`}
                   >
-                    Contáctame
+                    {dictionary.contact.emailLabel}
                   </span>
                   <h3
                     className={`text-2xl md:text-3xl font-bold break-all ${isDarkMode ? "text-white" : "text-slate-900"}`}
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                     <span
                       className={`text-xs font-bold tracking-widest uppercase mb-1 block ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
                     >
-                      Ver Código
+                      {dictionary.contact.githubLabel}
                     </span>
                     <div className="flex items-center justify-between">
                       <h3
@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
 
                   <div className="relative z-10">
                     <span className="text-xs font-bold tracking-widest uppercase mb-1 block text-[#0077b5]/60">
-                      Conectar
+                      {dictionary.contact.linkedinLabel}
                     </span>
                     <div className="flex items-center justify-between">
                       <h3 className="text-2xl font-bold text-[#0077b5]">
@@ -209,7 +209,7 @@ const Contact: React.FC = () => {
               >
                 <MapPin size={16} />
                 <span className="text-sm font-medium">
-                  Arequipa, Perú - Disponible Remoto
+                  {dictionary.contact.location}
                 </span>
               </div>
             </div>
@@ -258,7 +258,7 @@ const Contact: React.FC = () => {
                         htmlFor="name"
                         className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
                       >
-                        Nombre completo
+                        {dictionary.contact.form.name}
                       </label>
                       <input
                         type="text"
@@ -279,7 +279,7 @@ const Contact: React.FC = () => {
                         htmlFor="email"
                         className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
                       >
-                        Correo electrónico
+                        {dictionary.contact.form.email}
                       </label>
                       <input
                         type="email"
@@ -291,7 +291,7 @@ const Contact: React.FC = () => {
                             ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500"
                             : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
                         }`}
-                        placeholder="ejemplo@correo.com"
+                        placeholder="email@example.com"
                       />
                     </div>
                   </div>
@@ -301,7 +301,7 @@ const Contact: React.FC = () => {
                       htmlFor="message"
                       className={`text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}
                     >
-                      Cuéntame sobre tu proyecto
+                      {dictionary.contact.form.message}
                     </label>
                     <textarea
                       name="message"
@@ -315,7 +315,7 @@ const Contact: React.FC = () => {
                           ? "bg-slate-900/50 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white placeholder-slate-500"
                           : "bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 placeholder-slate-400"
                       }`}
-                      placeholder="Hola, estoy buscando ayuda con..."
+                      placeholder={dictionary.contact.form.placeholderMessage}
                     ></textarea>
                   </div>
 
@@ -328,7 +328,7 @@ const Contact: React.FC = () => {
                           : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-indigo-600/25"
                       }`}
                     >
-                      <span>Enviar Mensaje</span>
+                      <span>{dictionary.contact.form.send}</span>
                       <Send
                         size={18}
                         className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
@@ -349,7 +349,7 @@ const Contact: React.FC = () => {
                 <p
                   className={`font-medium ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}
                 >
-                  Enviando a través del ciberespacio...
+                  {dictionary.contact.form.sending}
                 </p>
               </div>
 
@@ -364,10 +364,10 @@ const Contact: React.FC = () => {
                   >
                     <p className="text-sm leading-relaxed">
                       {messageText ||
-                        "¡Hola! Me encantaría que trabajemos juntos."}
+                        dictionary.contact.form.placeholderMessage}
                     </p>
                     <div className="text-[10px] text-indigo-100/70 text-right mt-1.5 font-medium tracking-wide">
-                      Enviado • Justo ahora
+                      {dictionary.contact.form.success}
                     </div>
                   </div>
 
@@ -388,11 +388,10 @@ const Contact: React.FC = () => {
                       </p>
                     </div>
                     <p className="text-sm leading-relaxed">
-                      ¡Gracias por escribirme! He recibido tu mensaje
-                      correctamente. Te responderé lo antes posible.
+                      {dictionary.contact.form.thanks}
                     </p>
                     <div className="text-[10px] text-slate-500 text-right mt-2 font-medium tracking-wide">
-                      Automático
+                      Auto
                     </div>
                   </div>
                 </div>

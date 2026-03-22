@@ -5,9 +5,11 @@ import { useTheme } from "@/context/ThemeContext";
 import { trajectory } from "@/data/education";
 import { TrajectoryCard } from "@/components/ui/TrajectoryCard";
 import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
+import { useLocale } from "@/context/LocaleContext";
 
 const Education = () => {
   const { isDarkMode } = useTheme();
+  const { locale, dictionary } = useLocale();
   useRevealOnScroll();
 
   return (
@@ -22,12 +24,13 @@ const Education = () => {
           <h2
             className={`text-4xl md:text-5xl font-bold transition-colors ${isDarkMode ? "text-white" : "text-slate-900"}`}
           >
-            Trayectoria<span className="text-indigo-500">.</span>
+            {dictionary.education.title}
+            <span className="text-indigo-500">.</span>
           </h2>
           <p
             className={`mt-4 text-lg transition-colors ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}
           >
-            Mi camino profesional, logros académicos y experiencia colaborativa.
+            {dictionary.education.subtitle}
           </p>
         </div>
 
@@ -35,7 +38,7 @@ const Education = () => {
           <div
             className={`relative border-l-2 ml-4 md:ml-6 space-y-16 md:space-y-20 transition-colors ${isDarkMode ? "border-indigo-500/30" : "border-indigo-200"}`}
           >
-            {trajectory.map((item, index) => (
+            {trajectory[locale].map((item, index) => (
               <div key={index} className="reveal">
                 <TrajectoryCard
                   item={item}
