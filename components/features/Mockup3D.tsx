@@ -5,9 +5,17 @@ import { useTheme } from "@/context/ThemeContext";
 
 interface Mockup3DProps {
   image: string;
+  video?: string;
+  fit?: "cover" | "contain";
+  background?: string;
 }
 
-const Mockup3D: React.FC<Mockup3DProps> = ({ image }) => {
+const Mockup3D: React.FC<Mockup3DProps> = ({
+  image,
+  video,
+  fit = "cover",
+  background,
+}) => {
   const { isDarkMode } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 20, y: -15, scale: 0.9 });
@@ -59,20 +67,35 @@ const Mockup3D: React.FC<Mockup3DProps> = ({ image }) => {
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
         </div>
 
-        <div className={`relative ${isDarkMode ? "bg-[#0A0F1C]" : "bg-white"}`}>
+        <div
+          className={`relative ${!background ? (isDarkMode ? "bg-[#0A0F1C]" : "bg-white") : ""}`}
+          style={background ? { backgroundColor: background } : undefined}
+        >
           <div
             className={`absolute inset-0 mix-blend-overlay transition-opacity duration-500 pointer-events-none ${isDarkMode ? "bg-indigo-900/20" : "bg-indigo-200/10"}`}
           ></div>
-          <img
-            src={image}
-            alt="Project Mockup"
-            className="w-full aspect-video object-cover object-top"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src =
-                "https://via.placeholder.com/800x450/0A0F1C/4F46E5?text=Proyecto";
-            }}
-          />
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              suppressHydrationWarning
+              className="w-full aspect-video object-cover object-top"
+            />
+          ) : (
+            <img
+              src={image}
+              alt="Project Mockup"
+              className={`w-full aspect-video ${fit === "contain" ? "object-contain object-center" : "object-cover object-top"}`}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src =
+                  "https://via.placeholder.com/800x450/0A0F1C/4F46E5?text=Proyecto";
+              }}
+            />
+          )}
         </div>
       </div>
     </div>

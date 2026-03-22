@@ -12,6 +12,7 @@ import {
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { roles } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
+import DownloadCV from "@/components/ui/DownloadCV";
 
 const Hero: React.FC = () => {
   const { isDarkMode } = useTheme();
@@ -81,13 +82,7 @@ const Hero: React.FC = () => {
               Ponerse en contacto <ArrowRight size={18} />
             </button>
 
-            <a
-              href="/cv-jhonatan-arias.pdf"
-              download
-              className={`bg-transparent border px-7 py-3 rounded-md font-bold transition-all flex items-center gap-2 hover:-translate-y-1 uppercase text-[13px] tracking-wide ${isDarkMode ? "border-white/20 text-white hover:bg-white/5 hover:border-indigo-400" : "border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-indigo-500"}`}
-            >
-              Descargar CV <Download size={18} />
-            </a>
+            <DownloadCV styleType="hero" />
           </div>
         </div>
 

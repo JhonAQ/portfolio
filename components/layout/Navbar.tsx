@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Menu, X, Sun, Moon, Download } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { navSections } from "@/data/constants";
 import { useTheme } from "@/context/ThemeContext";
+import DownloadCV from "@/components/ui/DownloadCV";
 
 interface NavbarProps {
   activeSection: string;
@@ -57,14 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <a
-              href="/cv-jhonatan.pdf"
-              download
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-indigo-500/25 ${isDarkMode ? "bg-white text-slate-900 hover:bg-indigo-50" : "bg-slate-900 text-white hover:bg-slate-800"}`}
-            >
-              <Download size={16} />
-              <span>CV</span>
-            </a>
+            <DownloadCV styleType="navbar" />
           </div>
         </div>
 
@@ -107,14 +101,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
-          <a
-            href="/cv-jhonatan.pdf"
-            download
-            className={`flex items-center justify-center gap-2 p-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all mt-2 ${isDarkMode ? "bg-white text-slate-900" : "bg-slate-900 text-white"}`}
-          >
-            <Download size={18} />
-            <span>Descargar CV</span>
-          </a>
+
+          <div className="mt-2 w-full">
+            <DownloadCV styleType="navbar" className="w-full justify-center" />
+          </div>
         </div>
       </div>
     </div>
