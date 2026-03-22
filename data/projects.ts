@@ -6,6 +6,7 @@ export interface Project {
   demo?: string;
   pitchDeck?: string;
   image: string;
+  video?: string;
   isDeveloping?: boolean;
 }
 
@@ -14,7 +15,7 @@ export const projects: Project[] = [
     title: "Ingresa.pe",
     description: "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
     tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png",
+    image: "/images/trabajos/ingresa-pe.png",
     isDeveloping: true
   },
   {
@@ -23,14 +24,15 @@ export const projects: Project[] = [
     tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     github: "https://github.com/JhonAQ/radical-camp-2025",
     demo: "https://radicalcamp.vercel.app",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png",
+    video: "/video/radical.webm"
   },
   {
     title: "EduCheck",
     description: "Sistema integral de control de asistencia para el colegio 'Fe y Ciencia'. Automatización mediante códigos QR que genera reportes de puntualidad y envía notificaciones instantáneas de ingreso/salida a los padres vía WhatsApp Web.",
     tech: ["Node.js", "WhatsApp API", "TypeScript", "QR Code"],
     github: "https://github.com/JhonAQ/qr-cole",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
+    image: "/images/trabajos/educheck.png"
   },
   {
     title: "WaOS Simulator",
