@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
-          
+
           <div className="mt-2 w-full">
             <DownloadCV styleType="navbar" className="w-full justify-center" />
           </div>
