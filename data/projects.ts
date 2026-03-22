@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description: "Software educativo de alto nivel para simulación de Sistemas Operativos. Visualiza algoritmos de scheduling (Round Robin, FIFO, etc.) y gestión de memoria (Paginación, Segmentación) con diagramas de Gantt y mapas de memoria en tiempo real. Desarrollado en C++ con Qt.",
     tech: ["C++", "Qt Framework", "Algorithms", "OS Theory"],
     github: "https://github.com/Alfahajor/WaOS",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/episunsa.png"
+    image: "/images/trabajos/waos.png"
   },
   {
     title: "Knowledge Wardens",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     tech: ["Unity WebGL", "Vercel AI SDK", "Game Design", "React"],
     github: "https://github.com/gustadev24/knowledge-wardens",
     demo: "https://knowledge-wardens.vercel.app",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/rps.png"
+    image: "/images/trabajos/knowdledge-wardens.png"
   },
   {
     title: "TeToca",
@@ -59,14 +59,14 @@ export const projects: Project[] = [
     tech: ["React Native", "Node.js", "SaaS", "UX Research"],
     github: "https://github.com/JhonAQ/te-toca-app",
     pitchDeck: "https://www.canva.com/design/DAGstnQBFqA/CDYdqHKvCmFpDll9_FRSiA/view",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/admin-dashboard.png"
+    image: "/images/trabajos/tetoca.png"
   },
   {
     title: "IHC HeadControl",
     description: "Sistema de accesibilidad que permite controlar el cursor del mouse mediante gestos faciales y movimientos de cabeza. Diseñado para personas con discapacidad motriz, inspirado en tecnologías asistivas como ACAT.",
     tech: ["Python", "OpenCV", "Computer Vision", "HCI"],
     github: "https://github.com/JhonAQ/IHC-HeadControl",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/paz.gif"
+    image: "/images/trabajos/ihc-head-control.png"
   },
   {
     title: "CoderDojo Platform",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     tech: ["React", "UI/UX", "Gamification", "Frontend"],
     github: "https://github.com/JhonAQ/coder-dojo-front",
     demo: "https://coder-dojo-front.vercel.app",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+    image: "/images/trabajos/coderdojo.png"
   },
   {
     title: "Himnario Adonai",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "SQL.js", "PWA", "Tailwind"],
     github: "https://github.com/JhonAQ/himnario-adonai",
     demo: "https://himnario-adonai.vercel.app",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/library-app.png"
+    image: "/images/trabajos/adonai.jfif"
   },
   {
     title: "Proyecto Ayni",
@@ -90,6 +90,6 @@ export const projects: Project[] = [
     tech: ["HTML/CSS", "JavaScript", "Social Impact"],
     github: "https://github.com/JhonAQ/InnovaSur",
     pitchDeck: "https://www.canva.com/design/DAG1ZrHHCEA/tIcwRlLDbcWFEEUqotDYxQ/view",
-    image: "https://raw.githubusercontent.com/JhonAQ/pweb1-personal-page/main/img/projects/landing-page.png"
+    image: "/images/trabajos/ayni.png"
   }
 ];
