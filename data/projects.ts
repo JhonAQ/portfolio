@@ -23,6 +23,8 @@ export const projects: ProjectsByLocale = {
       description:
         "Startup EdTech B2C en desarrollo enfocada en postulantes a la UNSA. Ofrece bancos de preguntas de exámenes pasados con una experiencia gamificada tipo Duolingo y UI/UX de alta convertibilidad. Modelo de negocio escalable replicable a nivel nacional.",
       tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/JhonAQ/IngresaPe",
+      demo: "https://ingresa.jhonaq.me",
       image: "/images/trabajos/ingresa-pe.png",
       imageFit: "contain",
       imageBg: "white",
@@ -114,6 +116,8 @@ export const projects: ProjectsByLocale = {
       description:
         "B2C EdTech startup in development focused on UNSA applicants. Offers past exam question banks with a Duolingo-like gamified experience and high-converting UI/UX. Scalable model replicable nationwide.",
       tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/JhonAQ/IngresaPe",
+      demo: "https://ingresa.jhonaq.me",
       image: "/images/trabajos/ingresa-pe.png",
       imageFit: "contain",
       imageBg: "white",
